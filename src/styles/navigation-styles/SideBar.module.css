@@ -1,0 +1,4 @@
+.side-bar {
+  background-color: yellow;
+  grid-area: sidebar;
+}

@@ -1,0 +1,9 @@
+.avatar {
+  width: 45px;
+  aspect-ratio: 1;
+  border-radius: 25px;
+}
+.avatar:hover {
+  cursor: pointer;
+  color: var(--primary-orange-light);
+}

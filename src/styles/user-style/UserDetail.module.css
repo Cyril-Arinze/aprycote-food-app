@@ -1,0 +1,11 @@
+.user_detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.user_detail p {
+  font-size: var(--fs-s);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+}
