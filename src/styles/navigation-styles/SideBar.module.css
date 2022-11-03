@@ -110,6 +110,9 @@
     left: 0;
     height: 100vh;
   }
+  .auth__btn {
+    margin-top: auto;
+  }
   .side-bar__toggle {
     display: none;
   }

@@ -1,4 +1,4 @@
-import React, { memo, useState, useEffect } from 'react';
+import React, { memo, useState } from 'react';
 
 import classes from '../../styles/navigation-styles/SideBar.module.css';
 import logo_Sm from '../../assets/Logo_SS.png';
