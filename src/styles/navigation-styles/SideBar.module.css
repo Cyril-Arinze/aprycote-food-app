@@ -111,7 +111,7 @@
     height: 100vh;
   }
   .auth__btn {
-    margin-top: auto;
+    margin-top: 0;
   }
   .side-bar__toggle {
     display: none;
