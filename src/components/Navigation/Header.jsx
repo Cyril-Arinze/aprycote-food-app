@@ -1,14 +1,13 @@
-import { useRef } from 'react';
+import { memo, useRef } from 'react';
+
 import { FiSearch } from 'react-icons/fi';
-import { HiBell } from 'react-icons/hi';
-import { RiMessengerFill } from 'react-icons/ri';
-import { IoIosCart } from 'react-icons/io';
-
-import classes from '../../styles/navigation-styles/NavBar.module.css';
+import classes from '../../styles/navigation-styles/Header.module.css';
 import Hamburger from '../../UI/Hamburger/Hamburger';
-import UserDetail from '../User/UserDetail';
+import User from '../User/User';
+import LogoImg from '../../assets/Logo_SS.png';
+import Logo from '../../UI/Logo/Logo';
 
-const NavBar = () => {
+const Header = () => {
   const searchInputRef = useRef();
 
   const searchHandler = (evt) => {
@@ -23,27 +22,27 @@ const NavBar = () => {
   };
 
   return (
-    <nav className={classes.nav}>
-      <Hamburger />
+    <header className={classes.header}>
+      <div className={classes.hamburger}>
+        <Hamburger />
+      </div>
+      <div className={classes.logo}>
+        <Logo src={LogoImg} />
+      </div>
       <form onSubmit={searchHandler}>
         <FiSearch />
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Search meals by name"
           minLength={4}
           ref={searchInputRef}
         />
       </form>
       <div className={classes.user}>
-        <div className={classes.user__actions}>
-          <HiBell />
-          <RiMessengerFill />
-          <IoIosCart />
-        </div>
-        <UserDetail />
+        <User />
       </div>
-    </nav>
+    </header>
   );
 };
 
-export default NavBar;
+export default memo(Header);

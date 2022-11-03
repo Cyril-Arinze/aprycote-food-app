@@ -1,16 +1,19 @@
 import React, { memo } from 'react';
+import { useSelector } from 'react-redux';
 
 import classes from '../../styles/layout-styles/Layout.module.css';
-import NavBar from '../Navigation/NavBar';
+import Header from '../Navigation/Header';
 import SideBar from '../Navigation/SideBar';
+import { sideBarSelector } from '../../store/slices/ui-slice';
 
 const Layout = (props) => {
+  const sideBarIsShown = useSelector(sideBarSelector); // ==> using the sideBarIsShown state in the store to conditional render the sidebar
   return (
-    <div className={classes.layout}>
-      <NavBar />
-      <SideBar />
-      {props.children}
-    </div>
+    <section className={classes.layout}>
+      <Header />
+      {sideBarIsShown && <SideBar />}
+      <main>{props.children}</main>
+    </section>
   );
 };
 

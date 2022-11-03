@@ -11,13 +11,13 @@ const UserData = {
     'https://i0.wp.com/www.cssscript.com/wp-content/uploads/2020/12/Customizable-SVG-Avatar-Generator-In-JavaScript-Avataaars.js.png?fit=438%2C408&ssl=1',
 };
 const UserDetail = () => {
-  const { name, Occupation, image } = UserData;
+  const { name, image } = UserData;
   return (
     <div className={classes.user_detail}>
       <Avatar src={image} alt={name} />
       <div>
         <p>{name}</p>
-        <p>{Occupation}</p>
+        {/* <p>{Occupation}</p> */}
       </div>
     </div>
   );

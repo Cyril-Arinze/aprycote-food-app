@@ -13,11 +13,6 @@
   margin: 0;
   overflow: visible;
 }
-@media (min-width: 1200px) {
-  .hamburger {
-    display: none;
-  }
-}
 .hamburger:hover {
   opacity: 0.7;
 }

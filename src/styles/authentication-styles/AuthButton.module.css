@@ -1,0 +1,37 @@
+.auth {
+  outline: none;
+  border: none;
+  background-color: var(--white);
+  height: 44px;
+  display: flex;
+  gap: 16px;
+  border-radius: 25px;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: var(--fs-s);
+  padding: 16px;
+  color: var(--black);
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+.auth:hover {
+  background-color: var(--primary-orange);
+}
+.auth:hover * {
+  color: var(--white);
+}
+
+.auth > svg {
+  color: var(--para-grey);
+  width: 24px;
+  height: 24px;
+}
+
+@media (min-width: 62em) {
+  .expanded {
+    justify-content: center;
+  }
+  .expanded span {
+    display: none;
+  }
+}

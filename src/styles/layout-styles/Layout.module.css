@@ -7,3 +7,9 @@
     'sidebar  navbar  navbar'
     'sidebar  main    main';
 }
+
+.layout main {
+  grid-area: main;
+  height: 100%;
+  background-color: var(--primary-orange-light);
+}

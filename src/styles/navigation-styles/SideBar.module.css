@@ -1,4 +1,127 @@
 .side-bar {
-  background-color: yellow;
+  background-color: var(--white);
   grid-area: sidebar;
+  width: fit-content;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.side-bar__toggle {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 96px;
+  right: -15px;
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  place-content: center;
+  border-bottom: 1px solid var(--border);
+  padding: 24px 32px;
+}
+.nav__toggle {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+.nav__links {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+}
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 44px;
+  padding: 16px;
+  border-radius: 25px;
+  font-size: var(--fs-m);
+  background-color: var(--side__bar-btn);
+}
+.nav-link:hover {
+  background-color: var(--primary-orange);
+}
+.nav-link:hover * {
+  color: var(--white);
+}
+
+.nav-link__expanded {
+  width: 100% !important;
+  background-color: var(--white);
+  justify-content: start;
+}
+.nav__links a {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.nav-link__text {
+  display: none;
+}
+.nav__links a span {
+  font-size: var(--fs-s);
+  color: var(--black);
+}
+.nav__links svg {
+  color: var(--para-grey);
+  width: 24px;
+  aspect-ratio: 1;
+}
+
+.auth__btn {
+  margin-top: auto;
+  padding: 12px 24px;
+}
+
+.active {
+  background-color: var(--primary-orange) !important;
+}
+.active * {
+  color: var(--white) !important;
+}
+.active svg {
+  color: var(--white) !important;
+}
+@media (max-width: 62em) {
+  .side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+  }
+  .side-bar__toggle {
+    display: none;
+  }
+
+  .user {
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    margin-top: auto;
+  }
+}
+@media (min-width: 62rem) {
+  .user {
+    display: none;
+  }
 }
