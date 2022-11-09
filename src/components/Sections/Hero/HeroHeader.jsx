@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import heroImg from '../../../assets/hero.png';
+import heroImg from '../../../assets/Hero.png';
 import classes from '../../../styles/sections-styles/hero/IntroHero.module.css';
 import Button from '../../../UI/Buttons/Button';
 import { userDataSelector } from '../../../store/slices/auth-slice';
