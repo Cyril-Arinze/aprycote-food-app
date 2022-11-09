@@ -1,5 +1,5 @@
 .header {
-  background-color: var(--white);
+  background-color: rgb(var(--white));
   grid-area: navbar;
   position: sticky;
   top: 0;

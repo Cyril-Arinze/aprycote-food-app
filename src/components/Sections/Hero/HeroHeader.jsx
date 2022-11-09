@@ -6,7 +6,7 @@ import classes from '../../../styles/sections-styles/hero/IntroHero.module.css';
 import Button from '../../../UI/Buttons/Button';
 import { userDataSelector } from '../../../store/slices/auth-slice';
 
-export const HeroHeader = (props) => {
+const HeroHeader = (props) => {
   const userData = useSelector(userDataSelector);
   return (
     <header
@@ -26,3 +26,5 @@ export const HeroHeader = (props) => {
     </header>
   );
 };
+
+export default HeroHeader;

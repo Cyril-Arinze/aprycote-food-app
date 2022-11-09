@@ -1,7 +1,7 @@
 .auth {
   outline: none;
   border: none;
-  background-color: var(--white);
+  background-color: rgb(var(--white));
   height: 44px;
   display: flex;
   gap: 16px;
@@ -18,7 +18,7 @@
   background-color: var(--primary-orange);
 }
 .auth:hover * {
-  color: var(--white);
+  color: rgb(var(--white));
 }
 
 .auth > svg {

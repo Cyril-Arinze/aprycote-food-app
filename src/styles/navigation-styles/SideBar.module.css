@@ -1,5 +1,5 @@
 .side-bar {
-  background-color: var(--white);
+  background-color: rgb(var(--white));
   grid-area: sidebar;
   width: fit-content;
   position: sticky;
@@ -12,7 +12,7 @@
   height: 100%;
 }
 .side-bar__toggle {
-  background-color: var(--white);
+  background-color: rgb(var(--white));
   border: 1px solid var(--border);
   display: flex;
   justify-content: center;
@@ -60,15 +60,15 @@
   background-color: var(--side__bar-btn);
 }
 .nav-link:hover {
-  background-color: var(--primary-orange);
+  background-color: var(--primary-orange-light);
 }
 .nav-link:hover * {
-  color: var(--white);
+  color: rgb(var(--white));
 }
 
 .nav-link__expanded {
   width: 100% !important;
-  background-color: var(--white);
+  background-color: rgb(var(--white));
   justify-content: start;
 }
 .nav__links a {
@@ -99,11 +99,14 @@
 .active {
   background-color: var(--primary-orange) !important;
 }
+.active:hover {
+  background-color: var(--primary-orange-light) !important;
+}
 .active * {
-  color: var(--white) !important;
+  color: rgb(var(--white)) !important;
 }
 .active svg {
-  color: var(--white) !important;
+  color: rgb(var(--white)) !important;
 }
 @media (max-width: 62em) {
   .side-bar {

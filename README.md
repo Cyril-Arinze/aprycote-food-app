@@ -12,10 +12,10 @@ This is a project aimed primarily to practice my basics in react.
 
 ## This project is built with:
 
--React - [doc](https://reactjs.org/)
--React-Router - [doc](https://reactrouter.com)
--Redux toolkit - [doc](https://redux-toolkit.js.org/)
--The meals database API - [doc](https://www.themealdb.com/api.php)
+- React - [doc](https://reactjs.org/)
+- React-Router - [doc](https://reactrouter.com)
+- Redux toolkit - [doc](https://redux-toolkit.js.org/)
+- The meals database API - [doc](https://www.themealdb.com/api.php)
 
 ## Contributors
 

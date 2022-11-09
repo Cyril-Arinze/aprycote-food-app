@@ -8,7 +8,7 @@
   --warning: rgb(230, 10, 10);
   --text-color: rgb(7, 20, 59);
   --para-grey: rgb(149, 152, 149);
-  --white: rgb(255, 255, 255);
+  --white: 255, 255, 255;
   --black: rgb(0, 0, 0);
   --border: rgb(227, 225, 225);
   --side__bar-btn: rgb(245, 245, 245);
@@ -30,7 +30,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-@media (max-width: 43em) {
+@media (max-width: 62em) {
   :root {
     /* font size */
     --fs-xl: 2rem;

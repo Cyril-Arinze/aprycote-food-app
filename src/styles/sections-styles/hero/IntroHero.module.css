@@ -7,7 +7,7 @@
 .hero {
   background-repeat: no-repeat;
   background-size: cover;
-  aspect-ratio: 3;
+  aspect-ratio: 2.5;
   border-radius: 24px;
   display: flex;
   padding: 16px;
@@ -52,7 +52,7 @@
 }
 .action_btn {
   padding: 8px 24px;
-  color: var(--white);
+  color: rgb(var(--white));
   font-size: var(--fs-s);
   align-self: flex-start;
 }
@@ -65,17 +65,17 @@
   border-radius: 24px;
   padding: 15px 0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgb(var(--white), 0.4);
 }
 .hero-aside__desc {
   align-self: flex-end;
-  margin: 0 auto;
   width: 100%;
 }
-.hero-aside__desc > h4 {
+.hero-aside__desc > h2 {
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 400;
-  font-size: var(--fs-lg);
+  font-size: var(--fs-xl);
   line-height: 130%;
   text-align: center;
   letter-spacing: 0.02em;
@@ -90,12 +90,12 @@
   line-height: 175%;
   text-align: center;
   letter-spacing: 0.02em;
-  color: #959895;
+  color: var(--para-grey);
 }
 .hero-aside__image {
   position: absolute;
   width: 100%;
-  top: -40%;
+  top: -35%;
   display: flex;
   justify-content: center;
 }
