@@ -1,0 +1,10 @@
+.button {
+  background-color: var(--primary-orange);
+  border-radius: 100px;
+  border: none;
+  outline: none;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: var(--primary-orange-light);
+}

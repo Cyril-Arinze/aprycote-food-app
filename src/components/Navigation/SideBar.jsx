@@ -8,23 +8,34 @@ import { RiFileList3Fill, RiSettings3Fill } from 'react-icons/ri';
 import { BsFillBookmarkHeartFill } from 'react-icons/bs';
 import { GrPrevious, GrNext } from 'react-icons/gr';
 import Logo from '../../UI/Logo/Logo';
-import User from '../User/User';
+import UserProfile from '../User/UserProfile';
 import AuthButton from '../Authentication/AuthButton';
+import { NavLink } from 'react-router-dom';
 
 const SideBar = () => {
-  const [sideBarIsExpanded, setSideBarIsExpanded] = useState(true);
+  const [sideBarIsExpanded, setSideBarIsExpanded] = useState(true); // use to manage if the side bar is expanded or not
 
   const expandSideBarHandler = () => {
+    // toggle side bar expansion
     setSideBarIsExpanded((prevState) => !prevState);
   };
 
+  // conditional class for the text in the navigation link based on if the side bar is expanded or not
   const navLinkTextClasses = !sideBarIsExpanded
     ? classes['nav-link__text']
     : '';
 
+  // conditional class for the text in the navigation link based on if the side bar is expanded or not
   const navLinkClasses = sideBarIsExpanded
     ? `${classes['nav-link__expanded']} ${classes['nav-link']}`
     : classes['nav-link'];
+
+  const navList = sideBarIsExpanded ? classes.nav__list : null;
+
+  // function used to set the class name of the active link N/B: ==> this is react router v6 specific
+  const ActiveLinkHandler = ({ isActive }) => {
+    return isActive ? `${navLinkClasses} ${classes.active}` : navLinkClasses;
+  };
 
   return (
     <aside className={classes['side-bar']}>
@@ -39,39 +50,39 @@ const SideBar = () => {
           <Logo src={!sideBarIsExpanded && logo_Sm} />
         </div>
         <ul className={classes.nav__links}>
-          <li className={`${navLinkClasses} ${classes.active}`}>
-            <a href="/">
+          <li className={navList}>
+            <NavLink to="Home" className={ActiveLinkHandler}>
               <TbHome />
               <span className={navLinkTextClasses}>Home</span>
-            </a>
+            </NavLink>
           </li>
-          <li className={`${navLinkClasses}`}>
-            <a href="/">
+          <li className={navList}>
+            <NavLink to="Wallet" className={ActiveLinkHandler}>
               <GiWallet />
               <span className={navLinkTextClasses}>Wallet</span>
-            </a>
+            </NavLink>
           </li>
-          <li className={`${navLinkClasses}`}>
-            <a href="/">
+          <li className={navList}>
+            <NavLink to="Orders" className={ActiveLinkHandler}>
               <RiFileList3Fill />
               <span className={navLinkTextClasses}>Orders</span>
-            </a>
+            </NavLink>
           </li>
-          <li className={`${navLinkClasses}`}>
-            <a href="/">
+          <li className={navList}>
+            <NavLink to="Favourite" className={ActiveLinkHandler}>
               <BsFillBookmarkHeartFill />
               <span className={navLinkTextClasses}>Favorite</span>
-            </a>
+            </NavLink>
           </li>
-          <li className={`${navLinkClasses}`}>
-            <a href="/">
+          <li className={navList}>
+            <NavLink to="Settings" className={ActiveLinkHandler}>
               <RiSettings3Fill />
               <span className={navLinkTextClasses}>Settings</span>
-            </a>
+            </NavLink>
           </li>
         </ul>
         <div className={classes.user}>
-          <User />
+          <UserProfile />
         </div>
         <div className={classes.auth__btn}>
           <AuthButton sideBarIsExpanded={sideBarIsExpanded} />

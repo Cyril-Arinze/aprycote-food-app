@@ -8,8 +8,14 @@
     'sidebar  main    main';
 }
 
-.layout main {
+.layout > main {
   grid-area: main;
   height: 100%;
-  background-color: var(--primary-orange-light);
+  padding: 40px;
+  background-color: var(--primary-peach);
+}
+@media (max-width: 62em) {
+  .layout > main {
+    padding: 25px 10px;
+  }
 }

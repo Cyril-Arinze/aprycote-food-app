@@ -1,10 +1,10 @@
 import { HiBell } from 'react-icons/hi';
 import { RiMessengerFill } from 'react-icons/ri';
 import { IoIosCart } from 'react-icons/io';
-import classes from '../../styles/user-style/User.module.css';
-import UserDetail from '../User/UserDetail';
+import classes from '../../styles/user-style/UserProfile.module.css';
+import UserDetail from './UserDetail';
 
-const User = (props) => {
+const UserProfile = (props) => {
   return (
     <div className={classes.user}>
       <div className={classes.user__actions}>
@@ -25,4 +25,4 @@ const User = (props) => {
     </div>
   );
 };
-export default User;
+export default UserProfile;

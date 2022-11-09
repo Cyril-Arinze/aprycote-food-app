@@ -8,6 +8,7 @@ const UISlice = createSlice({
   initialState: initialUIState,
   reducers: {
     toggleSideBar(state) {
+      // toggle the visibility of the side bar navigation
       state.sideBarIsShown = !state.sideBarIsShown;
     },
   },

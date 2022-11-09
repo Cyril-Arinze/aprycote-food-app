@@ -46,6 +46,9 @@
   gap: 24px;
   padding: 24px;
 }
+.nav__list {
+  width: 100%;
+}
 .nav-link {
   display: flex;
   justify-content: center;
@@ -54,7 +57,6 @@
   height: 44px;
   padding: 16px;
   border-radius: 25px;
-  font-size: var(--fs-m);
   background-color: var(--side__bar-btn);
 }
 .nav-link:hover {
@@ -72,7 +74,6 @@
 .nav__links a {
   text-decoration: none;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 16px;
 }
@@ -86,12 +87,13 @@
 .nav__links svg {
   color: var(--para-grey);
   width: 24px;
-  aspect-ratio: 1;
+  height: 24px;
 }
 
 .auth__btn {
   margin-top: auto;
-  padding: 12px 24px;
+  border-top: 1px solid var(--border);
+  padding: 32px 24px 16px;
 }
 
 .active {
@@ -119,7 +121,7 @@
 
   .user {
     border-top: 1px solid var(--border);
-    padding-top: 16px;
+    padding: 16px 24px;
     margin-top: auto;
   }
 }

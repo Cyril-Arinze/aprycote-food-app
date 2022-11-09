@@ -6,12 +6,14 @@ import { authActions } from '../../store/slices/auth-slice';
 import { isAuthSelector } from '../../store/slices/auth-slice';
 
 const AuthButton = (props) => {
-  const isLoggedIn = useSelector(isAuthSelector);
-  const dispatch = useDispatch();
+  const isLoggedIn = useSelector(isAuthSelector); // selects the authentication state from the redux store
+  const dispatch = useDispatch(); // Dispatches action to the redux store
 
   const authenticationHandler = () => {
+    // dispatch actions the toggle the auth state in the redux store
     dispatch(authActions.toggleIsAuth());
   };
+  // conditional class for the auth button based on if the user is authenticated or not
   const authBtnClass = props.sideBarIsExpanded
     ? classes.auth
     : `${classes.expanded} ${classes.auth}`;

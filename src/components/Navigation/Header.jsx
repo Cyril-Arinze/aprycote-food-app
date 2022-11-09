@@ -3,7 +3,7 @@ import { memo, useRef } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import classes from '../../styles/navigation-styles/Header.module.css';
 import Hamburger from '../../UI/Hamburger/Hamburger';
-import User from '../User/User';
+import UserProfile from '../User/UserProfile';
 import LogoImg from '../../assets/Logo_SS.png';
 import Logo from '../../UI/Logo/Logo';
 
@@ -39,7 +39,7 @@ const Header = () => {
         />
       </form>
       <div className={classes.user}>
-        <User />
+        <UserProfile />
       </div>
     </header>
   );

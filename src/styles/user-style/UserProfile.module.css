@@ -26,15 +26,22 @@
   align-items: center;
   justify-content: flex-start;
 }
+.user__actions span {
+  font-size: var(--fs-s);
+}
 
 @media (max-width: 62rem) {
   .user {
     flex-direction: column;
+    align-items: flex-start;
   }
+
   .user__actions {
     flex-direction: column;
+    width: 100%;
   }
   .user__actions > div {
     flex-direction: row;
+    padding: 0 16px;
   }
 }

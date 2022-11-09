@@ -1,22 +1,19 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { userDataSelector } from '../../store/slices/auth-slice';
 
 import classes from '../../styles/user-style/UserDetail.module.css';
 import Avatar from '../../UI/Avatar';
 
 // TODO:Change the hard coded userData to dynamic data using authentication
-const UserData = {
-  name: 'Cyril Arinze',
-  Occupation: 'Research Microbiologist',
-  image:
-    'https://i0.wp.com/www.cssscript.com/wp-content/uploads/2020/12/Customizable-SVG-Avatar-Generator-In-JavaScript-Avataaars.js.png?fit=438%2C408&ssl=1',
-};
+const UserData = {};
 const UserDetail = () => {
-  const { name, image } = UserData;
+  const userData = useSelector(userDataSelector);
   return (
     <div className={classes.user_detail}>
-      <Avatar src={image} alt={name} />
+      <Avatar src={userData.image} alt={userData.name} />
       <div>
-        <p>{name}</p>
+        <p>{userData.name}</p>
         {/* <p>{Occupation}</p> */}
       </div>
     </div>

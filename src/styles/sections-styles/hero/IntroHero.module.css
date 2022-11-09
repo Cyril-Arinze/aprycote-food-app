@@ -1,0 +1,116 @@
+.hero_section {
+  display: grid;
+  grid-template-columns: 1fr 30%;
+  grid-gap: 40px;
+}
+
+.hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: 3;
+  border-radius: 24px;
+  display: flex;
+  padding: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.hero_details {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 40px;
+}
+.hero_details h1 {
+  font-size: var(--fs-xl);
+  font-family: 'Playfair Display', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--fs-xl);
+  line-height: 130%;
+  letter-spacing: 0.02em;
+  color: var(--black);
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+.hero_details > span {
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--fs-xs);
+  line-height: 175%;
+  letter-spacing: 0.02em;
+}
+.hero_details > p > span,
+.hero_details > span {
+  color: var(--primary-orange);
+}
+.hero_details > p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: var(--fs-s);
+  line-height: 175%;
+  letter-spacing: 0.02em;
+  color: var(--para-grey);
+}
+.action_btn {
+  padding: 8px 24px;
+  color: var(--white);
+  font-size: var(--fs-s);
+  align-self: flex-start;
+}
+.hero-aside {
+  height: 80%;
+  max-width: 100%;
+  position: relative;
+  align-self: flex-end;
+  display: flex;
+  border-radius: 24px;
+  padding: 15px 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.hero-aside__desc {
+  align-self: flex-end;
+  margin: 0 auto;
+  width: 100%;
+}
+.hero-aside__desc > h4 {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--fs-lg);
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: var(--text-color);
+}
+.hero-aside__desc > p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: var(--fs-s);
+  line-height: 175%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #959895;
+}
+.hero-aside__image {
+  position: absolute;
+  width: 100%;
+  top: -40%;
+  display: flex;
+  justify-content: center;
+}
+.hero-aside__image > img {
+  max-width: 100%;
+}
+
+@media (max-width: 43em) {
+  .hero_section {
+    grid-template-columns: 1fr;
+  }
+  .hero-aside {
+    display: none;
+  }
+  .hero_details {
+    margin: 0;
+  }
+}
