@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import ErrorPage from './pages/ErrorPage';
 import Favourite from './pages/Favourite';
@@ -11,6 +11,7 @@ const App = () => {
   return (
     <Layout>
       <Routes>
+        <Route path="/" element={<Navigate to="/Home" />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Orders" element={<Orders />} />
         <Route path="/Favourite" element={<Favourite />} />
