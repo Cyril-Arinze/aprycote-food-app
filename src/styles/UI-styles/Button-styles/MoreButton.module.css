@@ -1,0 +1,13 @@
+.btn {
+  border-radius: 100px;
+  width: 24px;
+  aspect-ratio: 1;
+  display: flex;
+}
+.btn > svg {
+  color: rgb(var(--white));
+  align-self: center;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+}

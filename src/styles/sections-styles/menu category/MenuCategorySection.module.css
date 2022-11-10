@@ -1,0 +1,25 @@
+.meals-category {
+  display: grid;
+  grid-template-columns: 1fr 30%;
+  grid-gap: 40px;
+  margin-top: 40px;
+}
+.meals-category > main {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-image: url(../../../assets/Meals\ Category\ Image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 43em) {
+  .meals-category {
+    grid-template-columns: 1fr;
+  }
+  .meals-category aside {
+    display: none;
+  }
+  .meals-category__header {
+    padding: 24px 12px;
+  }
+}

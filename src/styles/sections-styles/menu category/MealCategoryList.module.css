@@ -1,0 +1,11 @@
+.category_list {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.category_list::-webkit-scrollbar {
+  width: 0;
+}

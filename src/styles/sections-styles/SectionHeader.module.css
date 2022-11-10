@@ -1,0 +1,39 @@
+.category__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+.category__header > h3 {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--fs-xl);
+  line-height: 130%;
+  letter-spacing: 0.02em;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: var(--text-color);
+}
+.category__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.category__actions > p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--fs-s);
+  line-height: 175%;
+  letter-spacing: 0.02em;
+  color: var(--black);
+}
+@media (max-width: 43em) {
+  .category__header {
+    padding: 24px 12px;
+  }
+  .category__actions {
+    margin-top: auto;
+  }
+}
