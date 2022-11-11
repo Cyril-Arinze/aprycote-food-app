@@ -13,6 +13,10 @@
   overflow-y: auto;
   padding: 40px;
   background-color: var(--primary-peach);
+  scrollbar-width: none;
+}
+.layout > main::-webkit-scrollbar {
+  width: 0;
 }
 @media (max-width: 62em) {
   .layout > main {

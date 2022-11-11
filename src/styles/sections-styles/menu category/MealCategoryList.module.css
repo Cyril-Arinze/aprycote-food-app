@@ -9,3 +9,8 @@
 .category_list::-webkit-scrollbar {
   width: 0;
 }
+@media (max-width: 62em) {
+  .category_list {
+    gap: 20px;
+  }
+}

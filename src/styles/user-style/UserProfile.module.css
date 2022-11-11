@@ -27,7 +27,7 @@
   justify-content: flex-start;
 }
 .user__actions span {
-  font-size: var(--fs-s);
+  font-size: var(--fs-xs);
 }
 
 @media (max-width: 62rem) {

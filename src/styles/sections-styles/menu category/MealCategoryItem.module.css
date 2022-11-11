@@ -16,9 +16,11 @@ hr {
   border: none;
   border-top: 1px solid var(--primary-orange);
 }
+.category_item:hover,
 .active_tab {
   background-color: var(--primary-orange-light) !important;
 }
+.category_item:hover,
 .active_tab * {
   color: rgb(var(--white)) !important;
 }
