@@ -6,6 +6,7 @@
   background: rgb(var(--white), 0.6);
   backdrop-filter: blur(21px);
   border-radius: 24px;
+  max-height: 750px;
 }
 .cart h3 {
   font-family: 'Playfair Display';
@@ -25,10 +26,12 @@
   gap: 24px;
   overflow-y: scroll;
   scrollbar-width: none;
+  max-height: 100%;
 }
 .cart__items::-webkit-scrollbar {
   width: 0;
 }
+
 .checkout_btn {
   margin: auto;
   padding: 8px 24px;
@@ -42,6 +45,9 @@
   letter-spacing: 0.02em;
 }
 @media (max-width: 62em) {
+  .cart {
+    max-height: 700px;
+  }
   .checkout_btn {
     padding: 4px 12px;
   }

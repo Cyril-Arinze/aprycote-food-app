@@ -4,6 +4,7 @@ import classes from '../../../styles/sections-styles/menu category/MenuCategoryS
 import MealCategoryList from './MealCategoryList';
 import SectionHeader from '../SectionHeader';
 import MealCategoryCart from './MealCategoryCart';
+import AvailableMealList from './AvailableMealList';
 
 const MealCategorySection = () => {
   return (
@@ -11,6 +12,7 @@ const MealCategorySection = () => {
       <main>
         <SectionHeader category="Meal Category" />
         <MealCategoryList />
+        <AvailableMealList />
       </main>
       <MealCategoryCart />
     </section>

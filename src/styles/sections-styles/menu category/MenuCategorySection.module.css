@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 30%;
   grid-gap: 40px;
   margin-top: 40px;
+  position: relative;
 }
 .meals-category > main {
   max-width: 100%;
@@ -21,5 +22,10 @@
   }
   .meals-category__header {
     padding: 24px 12px;
+  }
+}
+@media (max-width: 62em) {
+  .meals-category {
+    grid-gap: 20px;
   }
 }

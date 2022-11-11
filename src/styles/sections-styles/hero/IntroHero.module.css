@@ -114,3 +114,8 @@
     margin: 0;
   }
 }
+@media (max-width: 62em) {
+  .hero_section {
+    grid-gap: 20px;
+  }
+}

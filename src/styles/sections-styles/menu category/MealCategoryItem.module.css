@@ -20,7 +20,7 @@ hr {
 .active_tab {
   background-color: var(--primary-orange-light) !important;
 }
-.category_item:hover,
+.category_item:hover *,
 .active_tab * {
   color: rgb(var(--white)) !important;
 }

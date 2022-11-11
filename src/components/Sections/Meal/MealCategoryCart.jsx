@@ -19,6 +19,32 @@ const cartData = [
     price: 19.9,
   },
   {
+    name: 'Mushroom pizza',
+    image:
+      'https://www.aberdeenskitchen.com/wp-content/uploads/2020/08/Cheesy-Pepperoni-Mushroom-Pizza-3.jpg',
+    quantity: 1,
+    price: 19.9,
+  },
+  {
+    name: 'Burger',
+    image: 'https://burgerburger.co.nz/wp-content/uploads/2020/01/BC.jpg',
+    quantity: 1,
+    price: 19.9,
+  },
+  {
+    name: 'Mushroom pizza',
+    image:
+      'https://www.aberdeenskitchen.com/wp-content/uploads/2020/08/Cheesy-Pepperoni-Mushroom-Pizza-3.jpg',
+    quantity: 1,
+    price: 19.9,
+  },
+  {
+    name: 'Burger',
+    image: 'https://burgerburger.co.nz/wp-content/uploads/2020/01/BC.jpg',
+    quantity: 1,
+    price: 19.9,
+  },
+  {
     name: 'Spay Arrabiata',
     image:
       'https://www.aberdeenskitchen.com/wp-content/uploads/2020/08/Cheesy-Pepperoni-Mushroom-Pizza-3.jpg',

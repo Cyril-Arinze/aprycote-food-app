@@ -1,0 +1,75 @@
+/* .meal_item {
+  height: 350px;
+  aspect-ratio: 0.7;
+} */
+.meal_item-link {
+  height: 350px;
+  aspect-ratio: 0.7;
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  position: relative;
+}
+.meal_item-image {
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 15%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.meal_item-image > img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+}
+.meal_item-details {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  padding: 24px;
+  height: 70%;
+  gap: 14px;
+  background: rgb(var(--white), 0.5);
+  backdrop-filter: blur(21px);
+  border-radius: 24px;
+}
+.meal_item-details:hover,
+.active_tab {
+  background-color: var(--primary-orange-light) !important;
+}
+.meal_item-details:hover *,
+.active_tab * {
+  color: rgb(var(--white)) !important;
+}
+.meal_item-name,
+.meal_item-tag,
+.meal_item-price {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: var(--fs-s);
+  line-height: 175%;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+}
+.meal_item-tag > span,
+.meal_item-price {
+  color: var(--primary-orange);
+}
+.meal_item-tag {
+  font-size: var(--fs-xs);
+}
+
+@media (max-width: 62em) {
+  .meal_item-link {
+    height: 350px;
+    aspect-ratio: 0.6;
+  }
+}

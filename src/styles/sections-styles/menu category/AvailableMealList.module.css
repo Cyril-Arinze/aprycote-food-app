@@ -1,0 +1,16 @@
+.meal_list {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.meal_list::-webkit-scrollbar {
+  width: 0;
+}
+@media (max-width: 62em) {
+  .meal_list {
+    gap: 20px;
+  }
+}
