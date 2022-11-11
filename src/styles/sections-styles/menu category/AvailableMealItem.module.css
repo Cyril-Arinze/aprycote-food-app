@@ -36,7 +36,7 @@
   padding: 24px;
   height: 70%;
   gap: 14px;
-  background: rgb(var(--white), 0.5);
+  background: rgb(var(--white), 0.7);
   backdrop-filter: blur(21px);
   border-radius: 24px;
 }
