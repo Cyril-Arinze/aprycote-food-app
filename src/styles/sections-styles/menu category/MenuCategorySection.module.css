@@ -4,6 +4,7 @@
   grid-gap: 40px;
   margin-top: 40px;
   position: relative;
+  height: 750px;
 }
 .meals-category > main {
   max-width: 100%;
@@ -27,5 +28,6 @@
 @media (max-width: 62em) {
   .meals-category {
     grid-gap: 20px;
+    height: 730px;
   }
 }

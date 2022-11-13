@@ -1,0 +1,15 @@
+.footer {
+  grid-area: footer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(var(--white));
+}
+.footer p {
+  font-size: var(--fs-xs);
+}
+.footer > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}

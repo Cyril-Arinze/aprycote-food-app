@@ -20,11 +20,12 @@
   align-items: center;
   width: 35px;
   aspect-ratio: 1;
-  border-radius: 10px;
+  border-radius: 15px;
   cursor: pointer;
   position: absolute;
   top: 96px;
   right: -15px;
+  z-index: 9999;
 }
 
 .logo {

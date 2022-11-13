@@ -1,0 +1,24 @@
+.category_item {
+  background-color: transparent;
+  border-radius: 100px;
+  padding: 8px 24px;
+  list-style: none;
+  display: inline-flex;
+  flex-grow: 1;
+  border: 1px solid var(--primary-orange);
+}
+.category_item:last-of-type {
+  flex-grow: 0;
+}
+.category_item a {
+  text-decoration: none;
+  color: var(--primary-orange);
+}
+.active_tab,
+.category_item:hover {
+  background-color: var(--primary-orange);
+}
+.active_tab *,
+.category_item:hover * {
+  color: rgb(var(--white));
+}

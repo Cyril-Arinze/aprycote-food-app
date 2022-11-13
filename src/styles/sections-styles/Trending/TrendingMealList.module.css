@@ -1,0 +1,11 @@
+.trend_list {
+  display: flex;
+  overflow: scroll;
+  gap: 40px;
+  scrollbar-width: none;
+  list-style: none;
+  height: fit-content;
+}
+.trend_list::-webkit-scrollbar {
+  width: 0;
+}

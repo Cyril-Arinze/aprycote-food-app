@@ -1,0 +1,30 @@
+.categories {
+  background: rgba(var(--white), 0.6);
+  border: 1px solid rgb(var(--white));
+  backdrop-filter: blur(21px);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  gap: 24px;
+  max-height: 85%;
+}
+
+.categories h3 {
+  font-size: var(--fs-m);
+}
+.categories header {
+  padding: 10px;
+  align-self: stretch;
+}
+.categories__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.categories__list::-webkit-scrollbar {
+  width: 0;
+}

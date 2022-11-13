@@ -1,0 +1,44 @@
+.trending-meal {
+  display: grid;
+  grid-template-columns: 1fr 30%;
+  grid-gap: 40px;
+  margin-top: 40px;
+  position: relative;
+}
+.drop_image {
+  position: absolute;
+  bottom: -5%;
+  right: -15px;
+}
+.trending-meal > main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.trending-meal > main::-webkit-scrollbar {
+  width: 0;
+}
+
+@media (max-width: 43em) {
+  .trending-meal {
+    grid-template-columns: 1fr;
+  }
+  .trending-meal aside {
+    display: none;
+  }
+}
+@media (max-width: 62em) {
+  .trending-meal {
+    grid-gap: 20px;
+  }
+  .trending-meal > main {
+    gap: 20px;
+  }
+}
+@media (max-width: 43em) {
+  .drop_image {
+    display: none;
+  }
+}

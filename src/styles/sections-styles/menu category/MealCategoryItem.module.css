@@ -11,7 +11,7 @@
   margin-top: 24px;
   cursor: pointer;
 }
-hr {
+.category_item hr {
   width: 50%;
   border: none;
   border-top: 1px solid var(--primary-orange);
@@ -25,7 +25,8 @@ hr {
   color: rgb(var(--white)) !important;
 }
 
-.active_tab > hr {
+.active_tab > hr,
+.category_item:hover hr {
   width: 100% !important;
   border-color: rgb(var(--white)) !important;
 }
