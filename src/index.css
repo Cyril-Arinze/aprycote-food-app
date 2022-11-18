@@ -44,3 +44,15 @@
 body {
   background-color: var(--primary-peach);
 }
+.full-page > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+@media (max-width: 43em) {
+  .full-page > ul {
+    gap: 0;
+  }
+}
+.full-page > ul > li {
+  margin: auto;
+}

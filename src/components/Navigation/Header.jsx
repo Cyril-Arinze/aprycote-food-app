@@ -6,19 +6,23 @@ import Hamburger from '../../UI/Hamburger/Hamburger';
 import UserProfile from '../User/UserProfile';
 import LogoImg from '../../assets/Logo_SS.png';
 import Logo from '../../UI/Logo/Logo';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const searchInputRef = useRef();
+  const navigate = useNavigate();
 
   const searchHandler = (evt) => {
     evt.preventDefault(); // prevent the default submission of the form
 
     // get the value of the search input from the searchInputRef
     const searchInput = searchInputRef.current.value;
-
-    console.log(searchInput);
-
-    //TODO: use the search input to fetch related meal from data base.
+    // navigate to the search page using the search input as dynamic parameter
+    if (searchInput.trim().length === 0) {
+      return;
+    }
+    navigate(`home/search/${searchInput}`);
+    searchInputRef.current.value = '';
   };
 
   return (
@@ -34,7 +38,8 @@ const Header = () => {
         <input
           type="text"
           placeholder="Search meals by name"
-          minLength={4}
+          enterKeyHint="Search"
+          minLength={1}
           ref={searchInputRef}
         />
       </form>

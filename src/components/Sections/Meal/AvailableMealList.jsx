@@ -1,79 +1,26 @@
 import React from 'react';
 
 import classes from '../../../styles/sections-styles/menu category/AvailableMealList.module.css';
+import MealItemSkeleton from '../../../UI/Loader/Skeleton Loader/MealItemSkeleton';
 import AvailableMealItem from './AvailableMealItem';
 
-const mealData = [
-  {
-    name: 'Mushroom pizza',
-    image:
-      'https://www.aberdeenskitchen.com/wp-content/uploads/2020/08/Cheesy-Pepperoni-Mushroom-Pizza-3.jpg',
-    quantity: 1,
-    price: 19.9,
-  },
-  {
-    name: 'Burger',
-    image: 'https://burgerburger.co.nz/wp-content/uploads/2020/01/BC.jpg',
-    quantity: 1,
-    price: 19.9,
-  },
-  {
-    name: 'Spay Arrabiata',
-    image:
-      'https://www.aberdeenskitchen.com/wp-content/uploads/2020/08/Cheesy-Pepperoni-Mushroom-Pizza-3.jpg',
-    quantity: 1,
-    price: 19.9,
-  },
-  {
-    name: 'Burger',
-    image: 'https://burgerburger.co.nz/wp-content/uploads/2020/01/BC.jpg',
-    quantity: 1,
-    price: 19.9,
-  },
-  {
-    name: 'Spay Arrabiata',
-    image:
-      'https://www.aberdeenskitchen.com/wp-content/uploads/2020/08/Cheesy-Pepperoni-Mushroom-Pizza-3.jpg',
-    quantity: 1,
-    price: 19.9,
-  },
-  {
-    name: 'Burger',
-    image: 'https://burgerburger.co.nz/wp-content/uploads/2020/01/BC.jpg',
-    quantity: 1,
-    price: 19.9,
-  },
-  {
-    name: 'Spay Arrabiata',
-    image:
-      'https://www.aberdeenskitchen.com/wp-content/uploads/2020/08/Cheesy-Pepperoni-Mushroom-Pizza-3.jpg',
-    quantity: 1,
-    price: 19.9,
-    tag: 'Curry, yam, Goat, Fish',
-  },
-  {
-    name: 'Burger',
-    image: 'https://burgerburger.co.nz/wp-content/uploads/2020/01/BC.jpg',
-    quantity: 1,
-    price: 19.9,
-  },
-  {
-    name: 'Spay Arrabiata',
-    image:
-      'https://www.aberdeenskitchen.com/wp-content/uploads/2020/08/Cheesy-Pepperoni-Mushroom-Pizza-3.jpg',
-    quantity: 1,
-    price: 19.9,
-  },
-];
 const AvailableMealList = (props) => {
+  if (props.isLoading === 'pending') {
+    return <MealItemSkeleton />;
+  }
+  if (props.isLoading === 'completed' && props.error) {
+    return <p>{props.error}</p>;
+  }
+  const sortedMeal = props.meals.sort(() => 0.5 - Math.random());
   return (
     <ul className={classes.meal_list}>
-      {mealData.map((meal, index) => {
+      {sortedMeal.map((meal) => {
         return (
           <AvailableMealItem
-            key={index}
+            id={meal.id}
+            key={meal.id}
             image={meal.image}
-            meal={meal.name}
+            meal={meal.meal}
             price={meal.price}
             tags={meal.tag}
           />

@@ -19,6 +19,7 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  text-decoration: none;
 }
 .category__actions > p {
   font-family: 'Poppins';
