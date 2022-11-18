@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 30%;
   grid-gap: 40px;
+  padding: 40px 0 0;
 }
 
 .hero {
@@ -106,6 +107,7 @@
 @media (max-width: 43em) {
   .hero_section {
     grid-template-columns: 1fr;
+    padding: 10px 0 0;
   }
   .hero-aside {
     display: none;

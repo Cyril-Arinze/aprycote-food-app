@@ -1,0 +1,17 @@
+.back__button {
+  background-color: rgb(var(--white));
+  width: fit-content;
+  height: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back__button > svg {
+  height: 30px;
+  width: 30px;
+}
+.back__button:hover > * {
+  color: rgb(var(--white));
+}
