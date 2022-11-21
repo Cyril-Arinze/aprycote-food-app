@@ -1,5 +1,4 @@
 import React from 'react';
-import MealCategoryItem from '../../../components/Sections/Meal/MealCategoryItem';
 
 import classes from '../../../styles/UI-styles/Loader/MenuCategorySkeleton.module.css';
 const MenuCategorySkeleton = () => {

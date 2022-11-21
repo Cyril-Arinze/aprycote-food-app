@@ -12,6 +12,11 @@
   -webkit-box-shadow: 3px 2px 36px -20px rgba(0, 0, 0);
   -moz-box-shadow: 3px 2px 36px -20px rgba(0, 0, 0);
 }
+.test {
+  width: 70px;
+  aspect-ratio: 1;
+  background-color: yellow;
+}
 
 .cart-btn:hover {
   background-color: var(--primary-orange-light);
