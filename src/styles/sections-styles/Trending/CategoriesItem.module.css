@@ -21,6 +21,9 @@
   background-color: var(--primary-orange) !important;
   color: rgb(var(--white)) !important;
 }
+.category_item:hover a {
+  color: rgb(var(--white)) !important;
+}
 /* .active_tab a,
 .category_item:hover * {
   color: rgb(var(--white)) !important;

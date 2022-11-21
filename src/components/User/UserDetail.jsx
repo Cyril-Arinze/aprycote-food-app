@@ -6,9 +6,9 @@ import classes from '../../styles/user-style/UserDetail.module.css';
 import Avatar from '../../UI/Avatar';
 
 // TODO:Change the hard coded userData to dynamic data using authentication
-const UserData = {};
 const UserDetail = () => {
   const userData = useSelector(userDataSelector);
+
   return (
     <div className={classes.user_detail}>
       <Avatar src={userData.image} alt={userData.name} />

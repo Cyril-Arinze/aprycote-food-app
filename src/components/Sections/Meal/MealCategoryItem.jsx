@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import MoreButton from '../../../UI/Buttons/MoreButton';
 import classes from '../../../styles/sections-styles/menu category/MealCategoryItem.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const MealCategoryItem = (props) => {
-  const activeLinkHandler = ({ isActive }) => {
-    return isActive
+  const location = useLocation();
+  const queryParam = new URLSearchParams(location.search);
+  const linkID = queryParam.get('category');
+  const activeLinkHandler = () => {
+    return linkID === props.category
       ? `${classes.category_item} ${classes.active_tab}`
       : `${classes.category_item}`;
   };
 
   return (
-    <NavLink to={`${props.category}`} className={activeLinkHandler}>
+    <NavLink to={`?category=${props.category}`} className={activeLinkHandler}>
       <div className={classes['category_item-image']}>
         <img src={props.image} alt={props.category} />
       </div>

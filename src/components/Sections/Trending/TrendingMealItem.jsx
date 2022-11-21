@@ -5,6 +5,13 @@ import classes from '../../../styles/sections-styles/Trending/TrendingMealItem.m
 import AddButton from '../../../UI/Buttons/AddButton';
 
 const TrendingMealItem = (props) => {
+  const item = {
+    image: props.image,
+    id: Math.random(),
+    meal: props.meal,
+    price: props.price,
+    quantity: 1,
+  };
   return (
     <li className={classes['trend-item']}>
       <div className={classes['trend-item__image']}>
@@ -24,7 +31,7 @@ const TrendingMealItem = (props) => {
         </Link>
         <div className={classes['trend-item_price']}>
           <p>${props.price}</p>
-          <AddButton />
+          <AddButton item={item} />
         </div>
       </div>
     </li>

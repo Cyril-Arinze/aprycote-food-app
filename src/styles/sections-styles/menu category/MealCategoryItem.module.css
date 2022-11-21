@@ -21,6 +21,12 @@
 .active_tab {
   background-color: var(--primary-orange-light) !important;
 }
+.active_tab {
+  position: sticky;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
 .category_item:hover *,
 .active_tab * {
   color: rgb(var(--white)) !important;

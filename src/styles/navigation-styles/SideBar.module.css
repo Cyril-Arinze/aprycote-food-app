@@ -104,19 +104,18 @@
 .active:hover {
   background-color: var(--primary-orange-light) !important;
 }
-.active * {
-  color: rgb(var(--white)) !important;
-}
+.active *,
 .active svg {
   color: rgb(var(--white)) !important;
 }
+
 @media (max-width: 62em) {
   .side-bar {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    z-index: 9999;
+    z-index: 11;
   }
   .auth__btn {
     margin-top: 0;

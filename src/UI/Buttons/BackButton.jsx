@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Button from './Button';
-import { IoIosReturnLeft } from 'react-icons/io';
+import { MdOutlineKeyboardBackspace } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import classes from '../../styles/UI-styles/Button-styles/BackButton.module.css';
 
@@ -12,7 +12,7 @@ const BackButton = () => {
   };
   return (
     <Button className={classes.back__button} onClick={backHandler}>
-      <IoIosReturnLeft />
+      <MdOutlineKeyboardBackspace />
     </Button>
   );
 };

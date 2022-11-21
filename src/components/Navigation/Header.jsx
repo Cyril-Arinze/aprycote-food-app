@@ -14,14 +14,13 @@ const Header = () => {
 
   const searchHandler = (evt) => {
     evt.preventDefault(); // prevent the default submission of the form
-
     // get the value of the search input from the searchInputRef
     const searchInput = searchInputRef.current.value;
     // navigate to the search page using the search input as dynamic parameter
     if (searchInput.trim().length === 0) {
       return;
     }
-    navigate(`home/search/${searchInput}`);
+    navigate(`home/search?q=${searchInput}`);
     searchInputRef.current.value = '';
   };
 

@@ -1,0 +1,17 @@
+.empty-cart {
+    text-align: center;
+}
+
+.empty-cart button {
+    border: none;
+    background-color: var(--primary-orange);
+    color: var(--primary-white);
+    border-radius: 15px;
+    padding: .8rem 1rem;
+    font-size: 15px;
+}
+
+.empty-cart button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}

@@ -5,13 +5,13 @@
 .meal_item-link {
   height: 350px;
   aspect-ratio: 0.7;
-  text-decoration: none;
   color: var(--text-color);
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   position: relative;
 }
+
 .meal_item-image {
   width: 70%;
   aspect-ratio: 1;
@@ -44,14 +44,21 @@
   backdrop-filter: blur(21px);
   border-radius: 24px;
 }
-.meal_item-details:hover,
+.meal_item-desc {
+  text-decoration: none;
+}
+.meal_item-desc:hover .meal_item-details {
+  background-color: var(--primary-orange-light) !important;
+  color: rgb(var(--white)) !important;
+}
+/* .meal_item-details:hover,
 .active_tab {
   background-color: var(--primary-orange-light) !important;
 }
 .meal_item-details:hover *,
 .active_tab * {
   color: rgb(var(--white)) !important;
-}
+} */
 .meal_item-name,
 .meal_item-tag,
 .meal_item-price {
@@ -69,6 +76,12 @@
 }
 .meal_item-tag {
   font-size: var(--fs-xs);
+}
+.meal_item-action {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
 }
 
 @media (max-width: 62em) {

@@ -9,8 +9,8 @@
 }
 
 .back__button > svg {
-  height: 30px;
-  width: 30px;
+  height: 24px;
+  width: 24px;
 }
 .back__button:hover > * {
   color: rgb(var(--white));

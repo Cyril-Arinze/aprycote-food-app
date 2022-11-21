@@ -8,7 +8,9 @@ const SectionHeader = (props) => {
     <header className={classes.category__header}>
       <h3>{props.category}</h3>
       <Link
-        to={`categories/${props.categoryName ? props.categoryName : 'Beef'}`}
+        to={`categories?category_name=${
+          props.categoryName ? props.categoryName : 'Beef'
+        }`}
         className={classes.category__actions}
       >
         <p>View all</p>

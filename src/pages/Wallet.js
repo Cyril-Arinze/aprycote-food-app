@@ -1,7 +1,17 @@
 import React from 'react';
+import headerClass from '../styles/pages-style/CategoriesPage.module.css';
+import BackButton from '../UI/Buttons/BackButton';
 
 const Wallet = () => {
-  return <div>Wallet</div>;
+  return (
+    <section>
+      <header className={headerClass.header}>
+        <BackButton />
+        <h1>Wallet</h1>
+      </header>
+      <p className="centered">Wallet section is still under development</p>
+    </section>
+  );
 };
 
 export default Wallet;

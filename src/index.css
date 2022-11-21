@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@400;600&display=swap');
-
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css');
 :root {
   /* colors */
   --primary-orange: rgb(234, 106, 18);
@@ -29,6 +29,16 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+#floating {
+  display: none;
+}
+.logo {
+  text-decoration: none;
+}
+.logo > img {
+  width: 100%;
+  object-fit: cover;
+}
 
 @media (max-width: 62em) {
   :root {
@@ -38,6 +48,13 @@
     --fs-m: 1.2rem;
     --fs-s: 0.8rem;
     --fs-xs: 0.7rem;
+  }
+  #floating {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    z-index: 3;
   }
 }
 
@@ -55,4 +72,7 @@ body {
 }
 .full-page > ul > li {
   margin: auto;
+}
+.centered {
+  text-align: center;
 }

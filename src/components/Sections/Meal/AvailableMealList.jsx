@@ -6,11 +6,14 @@ import AvailableMealItem from './AvailableMealItem';
 
 const AvailableMealList = (props) => {
   if (props.isLoading === 'pending') {
+    // return skeleton load while request is pending
     return <MealItemSkeleton />;
   }
   if (props.isLoading === 'completed' && props.error) {
+    //return an error msg if there was an error
     return <p>{props.error}</p>;
   }
+  // sort the array of data collected
   const sortedMeal = props.meals.sort(() => 0.5 - Math.random());
   return (
     <ul className={classes.meal_list}>

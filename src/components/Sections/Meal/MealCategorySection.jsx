@@ -7,10 +7,12 @@ import MealCategoryCart from './MealCategoryCart';
 import AvailableMealList from './AvailableMealList';
 import useHttp from '../../../hooks/use-http';
 import { fetchCategories, fetchMealByCategories } from '../../../lib/apiCall';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const MealCategorySection = () => {
-  const params = useParams();
+  const location = useLocation();
+  const queryParam = new URLSearchParams(location.search);
+  const categoryName = queryParam.get('category');
 
   const {
     sendRequest: fetchCategoriesFn,
@@ -29,13 +31,13 @@ const MealCategorySection = () => {
     fetchCategoriesFn();
   }, [fetchCategoriesFn]);
   useEffect(() => {
-    fetchMealByCategoriesFn(params['*']);
-  }, [fetchMealByCategoriesFn, params]);
+    fetchMealByCategoriesFn(categoryName);
+  }, [fetchMealByCategoriesFn, categoryName]);
 
   return (
     <section className={classes['meals-category']}>
       <main>
-        <SectionHeader category="Meal Category" categoryName={params['*']} />
+        <SectionHeader category="Menu Category" categoryName={categoryName} />
         <MealCategoryList
           category={categoriesData}
           status={categoriesStatus}

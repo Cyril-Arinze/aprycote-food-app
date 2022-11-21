@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import AvailableMealList from '../components/Sections/Meal/AvailableMealList';
 import useHttp from '../hooks/use-http';
 import { fetchMealByCategories } from '../lib/apiCall';
@@ -7,8 +7,9 @@ import BackButton from '../UI/Buttons/BackButton';
 import classes from '../styles/pages-style/CategoriesPage.module.css';
 
 const CategoriesPage = () => {
-  const params = useParams();
-  const { categoryName } = params;
+  const location = useLocation();
+  const queryParam = new URLSearchParams(location.search);
+  const categoryName = queryParam.get('category_name');
   const {
     sendRequest: fetchMealByCategoriesFn,
     status: mealStatus,

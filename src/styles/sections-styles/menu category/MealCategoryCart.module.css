@@ -1,6 +1,6 @@
 .cart {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   padding: 24px 12px;
   gap: 43px;
   background: rgb(var(--white), 0.6);

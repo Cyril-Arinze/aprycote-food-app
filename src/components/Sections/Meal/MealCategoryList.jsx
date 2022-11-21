@@ -2,10 +2,11 @@ import React from 'react';
 import MealCategoryItem from './MealCategoryItem';
 
 import classes from '../../../styles/sections-styles/menu category/MealCategoryList.module.css';
+import MenuCategorySkeleton from '../../../UI/Loader/Skeleton Loader/MenuCategorySkeleton';
 
 const MealCategoryList = (props) => {
   if (props.status === 'pending') {
-    return <p>Loading....</p>;
+    return <MenuCategorySkeleton />;
   }
   if (props.status === 'completed' && props.error) {
     return <p>{props.error}</p>;
