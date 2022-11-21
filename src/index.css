@@ -64,6 +64,7 @@
 
 body {
   background-color: var(--primary-peach);
+  overflow-x: hidden;
 }
 .full-page > ul {
   display: grid;

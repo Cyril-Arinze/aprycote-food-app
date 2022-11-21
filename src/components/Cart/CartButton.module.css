@@ -21,8 +21,8 @@
 .cart-btn__badge {
   position: absolute;
   border-radius: 50rem;
-  background-color: red;
-  color: white;
+  background-color: var(--warning);
+  color: rgb(var(--white));
   padding: 0.35em 0.65em;
   top: 10px;
   left: 90%;

@@ -63,5 +63,5 @@
 
 .actions .button {
   background-color: var(--primary-orange);
-  color: white;
+  color: rgb(var(--white));
 }
