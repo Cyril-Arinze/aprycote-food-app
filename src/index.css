@@ -30,7 +30,11 @@
   font-family: 'Poppins', sans-serif;
 }
 #floating {
-  display: none;
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  z-index: 3;
 }
 .logo {
   text-decoration: none;

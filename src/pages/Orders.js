@@ -1,7 +1,6 @@
 import React from 'react';
 import BackButton from '../UI/Buttons/BackButton';
 import headerClass from '../styles/pages-style/CategoriesPage.module.css';
-import MenuCategorySkeleton from '../UI/Loader/Skeleton Loader/MenuCategorySkeleton';
 
 const Orders = () => {
   return (

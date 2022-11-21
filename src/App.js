@@ -1,21 +1,24 @@
+import { lazy, Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
 import Layout from './components/Layout/Layout';
-import CategoriesPage from './pages/CategoriesPage';
-import ErrorPage from './pages/ErrorPage';
-import Favourite from './pages/Favourite';
-import Home from './pages/Home';
-import Orders from './pages/Orders';
-import Search from './pages/Search';
-import Settings from './pages/Settings';
-import Wallet from './pages/Wallet';
 import { cartSelector } from './store/slices/ui-slice';
+import LazyLoader from './UI/Loader/Lazy Loader/LazyLoader';
+
+const Home = lazy(() => import('./pages/Home'));
+const Orders = lazy(() => import('./pages/Orders'));
+const ErrorPage = lazy(() => import('./pages/ErrorPage'));
+const Favourite = lazy(() => import('./pages/Favourite'));
+const Search = lazy(() => import('./pages/Search'));
+const Settings = lazy(() => import('./pages/Settings'));
+const CategoriesPage = lazy(() => import('./pages/CategoriesPage'));
+const Wallet = lazy(() => import('./pages/Wallet'));
 
 const App = () => {
   const cartIsShown = useSelector(cartSelector);
   return (
-    <>
+    <Suspense fallback={<LazyLoader />}>
       {cartIsShown && <Cart />}
       <Layout>
         <Routes>
@@ -30,7 +33,7 @@ const App = () => {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Layout>
-    </>
+    </Suspense>
   );
 };
 
