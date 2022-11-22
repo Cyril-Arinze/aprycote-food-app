@@ -21,7 +21,9 @@ const HeroHeader = (props) => {
         <p>
           Get <span>FREE delivery</span> on every weekend
         </p>
-        <Button className={classes.action_btn}>Check Menu</Button>
+        <a href="#menu">
+          <Button className={classes.action_btn}>Check Menu</Button>
+        </a>
       </div>
     </header>
   );

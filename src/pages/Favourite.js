@@ -18,8 +18,10 @@ const Favourite = () => {
   return (
     <section className="full-page">
       <header className={headerClass.header}>
-        <BackButton />
-        <h1>Favourite</h1>
+        <div>
+          <BackButton />
+          <h1>Favourite</h1>
+        </div>
       </header>
       {content}
     </section>

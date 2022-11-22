@@ -6,8 +6,10 @@ const Wallet = () => {
   return (
     <section>
       <header className={headerClass.header}>
-        <BackButton />
-        <h1>Wallet</h1>
+        <div>
+          <BackButton />
+          <h1>Wallet</h1>
+        </div>
       </header>
       <p className="centered">Wallet section is still under development</p>
     </section>

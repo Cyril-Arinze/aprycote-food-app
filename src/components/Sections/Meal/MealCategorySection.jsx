@@ -35,7 +35,7 @@ const MealCategorySection = () => {
   }, [fetchMealByCategoriesFn, categoryName]);
 
   return (
-    <section className={classes['meals-category']}>
+    <section id="menu" className={classes['meals-category']}>
       <main>
         <SectionHeader category="Menu Category" categoryName={categoryName} />
         <MealCategoryList

@@ -36,8 +36,16 @@ const Search = () => {
   return (
     <section className="full-page">
       <header className={headerClass.header}>
-        <BackButton />
-        <h1>Search result for "{searchID}"</h1>
+        <div>
+          <BackButton />
+          <h1>Search result for "{searchID}"</h1>
+        </div>
+        {data && (
+          <p>
+            {data.length} {data.length > 1 ? 'meals' : 'meal'} matched search
+            input "{searchID}"
+          </p>
+        )}
       </header>
       {content}
     </section>

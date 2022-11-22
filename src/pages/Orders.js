@@ -6,8 +6,10 @@ const Orders = () => {
   return (
     <section>
       <header className={headerClass.header}>
-        <BackButton />
-        <h1>Orders</h1>
+        <div>
+          <BackButton />
+          <h1>Orders</h1>
+        </div>
       </header>
       <p className="centered">Orders section is still under development</p>
     </section>

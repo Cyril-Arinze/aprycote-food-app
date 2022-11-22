@@ -82,9 +82,9 @@
     aspect-ratio: 3;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 991px) {
   .cart-item__details::before {
     content: '';
-    width: 25px;
+    width: 30px;
   }
 }

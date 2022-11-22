@@ -34,5 +34,5 @@ const Categories = () => {
     </aside>
   );
 };
-
+export { categories };
 export default Categories;
