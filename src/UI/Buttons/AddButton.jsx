@@ -13,8 +13,8 @@ const AddButton = (props) => {
     dispatch(cartActions.addToCart(props.item));
   };
   return (
-    <Button onClick={addToCart} className={classes.btn}>
-      <BsPlus />
+    <Button onClick={addToCart} className={`${classes.btn} ${props.className}`}>
+      {props.children ? props.children : <BsPlus />}
     </Button>
   );
 };

@@ -26,7 +26,7 @@ const AvailableMealItem = (props) => {
       <div
         className={classes['meal_item-link']}
         onClick={() => {
-          navigate(`/home/meal-details/${props.id}?category=${props.meal}`);
+          navigate(`/home/meal-details/${props.id}?meal=${props.meal}`);
         }}
       >
         <div className={classes['meal_item-image']}>
@@ -36,7 +36,7 @@ const AvailableMealItem = (props) => {
           <div className={classes['meal_item-desc']}>
             <p className={classes['meal_item-name']}>{props.meal}</p>
             <p className={classes['meal_item-tag']}>
-              <span>Tag:</span> {props.tags}
+              <span>ID:</span> {props.tags}
             </p>
             <p className={classes['meal_item-price']}>$ {props.price}</p>
           </div>
@@ -49,5 +49,4 @@ const AvailableMealItem = (props) => {
     </li>
   );
 };
-
 export default AvailableMealItem;

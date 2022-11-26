@@ -6,29 +6,31 @@ import classes from '../../../styles/sections-styles/products details/ProductSec
 import MealRecipe from './MealRecipe';
 import PreparationInstruction from './PreparationInstruction';
 import useHttp from '../../../hooks/use-http';
-import { fetchMealByCategories, getMealDetails } from '../../../lib/apiCall';
-import { useParams } from 'react-router-dom';
+import { getMealDetails, SearchMealByName } from '../../../lib/apiCall';
+import { useParams, useSearchParams } from 'react-router-dom';
 import LazyLoader from '../../../UI/Loader/Lazy Loader/LazyLoader';
 import AvailableMealList from '../Meal/AvailableMealList';
 
 const ProductSection = () => {
+  const [queryParam] = useSearchParams();
+  const relatedMeal = queryParam.get('meal').slice(0, 1);
   const params = useParams();
   const { mealID } = params;
   const { sendRequest, data, status, error } = useHttp(getMealDetails);
   const {
-    sendRequest: fetchMealByCategoriesFn,
+    sendRequest: getRelatedMealFn,
     status: mealStatus,
     data: mealsData,
     error: mealError,
-  } = useHttp(fetchMealByCategories);
+  } = useHttp(SearchMealByName);
 
   useEffect(() => {
     sendRequest(mealID);
   }, [sendRequest, mealID]);
 
   useEffect(() => {
-    fetchMealByCategoriesFn();
-  }, [fetchMealByCategoriesFn]);
+    getRelatedMealFn(relatedMeal);
+  }, [getRelatedMealFn, relatedMeal]);
 
   if (status === 'pending' || mealStatus === 'pending') {
     return <LazyLoader />;
@@ -49,6 +51,7 @@ const ProductSection = () => {
           area={data.area}
           ingredients={data.ingredients}
           tags={data.tags}
+          image={data.image}
         />
       </div>
       <div className={classes.more_details}>

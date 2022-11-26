@@ -23,7 +23,7 @@ export const SearchMealByName = async (mealName) => {
   const newData = categoriesData.map((element) => {
     return {
       id: element.idMeal,
-      image: `${element.strMealThumb}/preview`,
+      image: `${element.strMealThumb}`,
       meal: element.strMeal,
       price: Math.floor(Math.random() * 50),
       tag: element.idMeal,
@@ -31,7 +31,6 @@ export const SearchMealByName = async (mealName) => {
   });
   return newData;
 };
-
 export const fetchMealByCategories = async (category) => {
   const response = await fetch(
     `https://www.themealdb.com/api/json/v1/1/filter.php?c=${
@@ -43,7 +42,7 @@ export const fetchMealByCategories = async (category) => {
   const newData = mealData.map((element) => {
     return {
       id: element.idMeal,
-      image: `${element.strMealThumb}/preview`,
+      image: `${element.strMealThumb}`,
       meal: element.strMeal,
       price: Math.floor(Math.random() * 50),
       tag: element.idMeal,

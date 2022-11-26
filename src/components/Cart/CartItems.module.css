@@ -71,7 +71,7 @@
 
 .cart-item__remove {
   background-color: var(--primary-orange);
-  color: var(--primary-white);
+  color: rgb(var(--white));
   display: flex;
   align-items: center;
   align-self: stretch;

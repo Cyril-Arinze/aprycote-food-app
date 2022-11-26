@@ -32,6 +32,7 @@
   background-color: rgb(var(--white));
   color: var(--text-color);
   flex-grow: 1;
+  border: 1px solid var(--primary-orange-light);
 }
 .product_tags > div:last-of-type {
   flex-grow: 0;
@@ -58,6 +59,9 @@
   color: rgb(var(--white));
   padding: 8px 0;
   width: 100%;
+  aspect-ratio: 12;
+  display: flex;
+  justify-content: center;
 }
 .products_details > div:last-of-type {
   display: flex;
