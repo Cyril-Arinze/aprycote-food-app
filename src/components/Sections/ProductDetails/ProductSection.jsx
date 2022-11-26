@@ -52,7 +52,7 @@ const ProductSection = () => {
         />
       </div>
       <div className={classes.more_details}>
-        <h2>More Details</h2>
+        <h1>More Details</h1>
         <MealRecipe ingredients={data.ingredients} />
         <PreparationInstruction
           youtube={data.youtube}

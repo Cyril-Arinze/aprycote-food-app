@@ -6,10 +6,23 @@
   height: 400px;
 }
 .more_details {
-  background-color: rgb(var(--white));
+  background-color: rgb(var(--white), 0.8);
   border-radius: 20px;
-  margin-top: 20px;
+  margin-top: 48px;
   padding: 24px;
+}
+.related_items {
+  margin-top: 24px;
+}
+.more_details h1,
+.related_items h2 {
+  font-family: PlayFair Display;
+  padding: 10px 24px;
+  font-size: var(--fs-lg);
+  border: 1px solid var(--primary-orange);
+}
+.more_details h2 {
+  padding: 10px 24px;
 }
 @media (max-width: 43em) {
   .product_desc {
