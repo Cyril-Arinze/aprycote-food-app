@@ -51,7 +51,7 @@ const SideBar = () => {
         </div>
         <ul className={classes.nav__links}>
           <li className={navList}>
-            <NavLink to="Home" className={ActiveLinkHandler}>
+            <NavLink to="Home?category=Beef" className={ActiveLinkHandler}>
               <TbHome />
               <span className={navLinkTextClasses}>Home</span>
             </NavLink>

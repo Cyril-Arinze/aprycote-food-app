@@ -8,7 +8,7 @@ import classes from '../../styles/UI-styles/Button-styles/BackButton.module.css'
 const BackButton = () => {
   const navigate = useNavigate();
   const backHandler = () => {
-    navigate(-1);
+    navigate('/home', { replace: true });
   };
   return (
     <Button className={classes.back__button} onClick={backHandler}>

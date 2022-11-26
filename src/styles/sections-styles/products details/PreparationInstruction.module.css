@@ -1,0 +1,13 @@
+.youtube_player {
+  width: min(560px, 100%);
+  margin: auto;
+}
+.youtube_player iframe {
+  width: 100%;
+}
+.wrapper {
+  margin: 24px 0;
+}
+.instruction {
+  text-align: justify;
+}

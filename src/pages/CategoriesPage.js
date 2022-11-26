@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
+
 import AvailableMealList from '../components/Sections/Meal/AvailableMealList';
 import useHttp from '../hooks/use-http';
 import { fetchMealByCategories } from '../lib/apiCall';
@@ -9,10 +10,8 @@ import { categories } from '../components/Sections/Trending/Categories';
 import MealItemSkeleton from '../UI/Loader/Skeleton Loader/MealItemSkeleton';
 
 const CategoriesPage = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const queryParam = new URLSearchParams(location.search);
-  const categoryName = queryParam.get('category_name');
+  const [searchParam, setSearchParam] = useSearchParams();
+  const categoryName = searchParam.get('category_name');
   const {
     sendRequest: fetchMealByCategoriesFn,
     status: mealStatus,
@@ -25,7 +24,7 @@ const CategoriesPage = () => {
   }, [fetchMealByCategoriesFn, categoryName]);
 
   const changeCategoriesHandler = (evt) => {
-    navigate(`/home/categories?category_name=${evt.target.value}`);
+    setSearchParam({ category_name: evt.target.value });
   };
 
   let content;
@@ -49,13 +48,14 @@ const CategoriesPage = () => {
       <header className={classes.header}>
         <div className={classes.action}>
           <BackButton />
-          <h1>{categoryName} Categories</h1>
+          <h1>{categoryName} category</h1>
         </div>
         <select
           className={classes.category_selector}
           onChange={changeCategoriesHandler}
-          value={categoryName}
+          value="others"
         >
+          <option value="others">others</option>
           {categories.map((category) => {
             return (
               <option key={category.category} value={category.category}>

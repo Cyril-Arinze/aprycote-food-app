@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import AvailableMealList from '../components/Sections/Meal/AvailableMealList';
 import useHttp from '../hooks/use-http';
 import { SearchMealByName } from '../lib/apiCall';
@@ -8,10 +8,8 @@ import MealItemSkeleton from '../UI/Loader/Skeleton Loader/MealItemSkeleton';
 import headerClass from '../styles/pages-style/CategoriesPage.module.css';
 
 const Search = () => {
-  const location = useLocation();
-  const queryParam = new URLSearchParams(location.search);
-  const searchID = queryParam.get('q').trim();
-
+  const [searchParam] = useSearchParams();
+  const searchID = searchParam.get('q').trim();
   const { sendRequest, error, status, data } = useHttp(SearchMealByName);
 
   useEffect(() => {

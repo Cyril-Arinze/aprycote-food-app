@@ -26,6 +26,7 @@ const AvailableMealList = (props) => {
             meal={meal.meal}
             price={meal.price}
             tags={meal.tag}
+            category={props.category}
           />
         );
       })}

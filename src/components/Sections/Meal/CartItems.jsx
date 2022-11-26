@@ -8,14 +8,6 @@ import Button from '../../../UI/Buttons/Button';
 const CartItems = (props) => {
   const dispatch = useDispatch(); // ==> dispatch hook from react redux
 
-  // shorten the meal name to prevent overflow on layout
-  let shortenedName = `${props.meal.slice(0, 20)}...`;
-  if (window.innerWidth < 1200) {
-    shortenedName = `${props.meal.slice(0, 9)}...`;
-  }
-  if (window.innerWidth > 1600) {
-    shortenedName = props.meal;
-  }
   //! All function handlers start here
 
   const addToCartHandler = () => {
@@ -46,8 +38,11 @@ const CartItems = (props) => {
         <img src={props.image} alt={props.meal} />
       </div>
       <div className={classes['cart-item__details']}>
+        <span />
         <div className={classes['cart-item__desc']}>
-          <h4>{shortenedName}</h4>
+          <div className={classes.meal_name}>
+            <h4>{props.meal}</h4>
+          </div>
           <div>
             <Button onClick={addToCartHandler} className={classes.btn}>
               +

@@ -27,8 +27,9 @@
   right: 0;
   z-index: 1;
 }
-.category_item:hover *,
-.active_tab * {
+
+.category_item:hover p,
+.active_tab p {
   color: rgb(var(--white)) !important;
 }
 
@@ -36,6 +37,13 @@
 .category_item:hover hr {
   width: 100% !important;
   border-color: rgb(var(--white)) !important;
+}
+.active_tab button {
+  background-color: rgb(var(--white));
+  color: var(--primary-orange) !important;
+}
+.active_tab button svg {
+  color: var(--primary-orange) !important;
 }
 
 .category_item-image {

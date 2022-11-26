@@ -5,7 +5,6 @@ import classes from '../../styles/layout-styles/Layout.module.css';
 import Header from '../Navigation/Header';
 import SideBar from '../Navigation/SideBar';
 import { sideBarSelector } from '../../store/slices/ui-slice';
-import Footer from '../Navigation/Footer';
 import CartButton from '../Cart/CartButton';
 
 const Layout = (props) => {
@@ -16,7 +15,6 @@ const Layout = (props) => {
       <Header />
       {sideBarIsShown && <SideBar />}
       <main>{props.children}</main>
-      <Footer />
     </section>
   );
 };

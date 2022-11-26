@@ -1,0 +1,16 @@
+.ingredient_table {
+  border-collapse: collapse;
+  width: min(100%, 50rem);
+  margin: auto;
+}
+.ingredient_table td {
+  border: 1px solid var(--para-grey);
+  padding: 8px;
+}
+.ingredient_table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.ingredient_table thead tr {
+  background-color: var(--primary-orange);
+  color: rgb(var(--white));
+}

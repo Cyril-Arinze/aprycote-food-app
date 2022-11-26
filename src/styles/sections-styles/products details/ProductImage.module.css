@@ -1,0 +1,10 @@
+.product_image {
+  width: 100%;
+  height: inherit;
+}
+.product_image img {
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+  border-radius: 15px;
+}

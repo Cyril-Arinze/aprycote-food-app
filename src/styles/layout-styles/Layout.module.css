@@ -6,7 +6,7 @@
   grid-template-areas:
     'sidebar  navbar  navbar'
     'sidebar  main    main'
-    'sidebar  footer    footer';
+    'sidebar  main    main';
 }
 
 .layout > main {

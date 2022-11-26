@@ -7,11 +7,10 @@ import MealCategoryCart from './MealCategoryCart';
 import AvailableMealList from './AvailableMealList';
 import useHttp from '../../../hooks/use-http';
 import { fetchCategories, fetchMealByCategories } from '../../../lib/apiCall';
-import { useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 const MealCategorySection = () => {
-  const location = useLocation();
-  const queryParam = new URLSearchParams(location.search);
+  const [queryParam] = useSearchParams();
   const categoryName = queryParam.get('category');
 
   const {

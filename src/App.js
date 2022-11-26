@@ -6,6 +6,7 @@ import Layout from './components/Layout/Layout';
 import { cartSelector } from './store/slices/ui-slice';
 import LazyLoader from './UI/Loader/Lazy Loader/LazyLoader';
 import Search from './pages/Search';
+import ProductDetailsPage from './pages/ProductDetailsPage';
 
 const Home = lazy(() => import('./pages/Home'));
 const Orders = lazy(() => import('./pages/Orders'));
@@ -22,14 +23,18 @@ const App = () => {
       {cartIsShown && <Cart />}
       <Layout>
         <Routes>
-          <Route path="/" element={<Navigate to="/Home" />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Orders" element={<Orders />} />
-          <Route path="/Favourite" element={<Favourite />} />
-          <Route path="/Wallet" element={<Wallet />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/" element={<Navigate to="Home?category=Beef" />} />
+          <Route path="Home" element={<Home />} />
+          <Route path="Orders" element={<Orders />} />
+          <Route path="Favourite" element={<Favourite />} />
+          <Route path="Wallet" element={<Wallet />} />
+          <Route path="settings" element={<Settings />} />
           <Route path="home/search" element={<Search />} />
           <Route path="home/categories" element={<CategoriesPage />} />
+          <Route
+            path="home/meal-details/:mealID"
+            element={<ProductDetailsPage />}
+          />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Layout>

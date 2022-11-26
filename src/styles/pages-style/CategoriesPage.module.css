@@ -3,7 +3,7 @@
   position: sticky;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
+  row-gap: 10px;
   top: 0;
   z-index: 2;
   background-color: var(--primary-peach);
@@ -30,7 +30,8 @@
   border: none;
   outline: none;
   border-radius: 25px;
-  padding: 3px 8px;
+  padding: 5px 8px;
+  width: 80px;
 }
 @media (max-width: 43em) {
   .header {

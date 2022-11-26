@@ -51,3 +51,36 @@ export const fetchMealByCategories = async (category) => {
   });
   return newData;
 };
+export const getMealDetails = async (mealID) => {
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`
+  );
+  const data = await response.json();
+
+  const mealData = data.meals;
+
+  const newData = mealData.map((element) => {
+    let ingredients = [];
+    for (let i = 1; i < 21; i++) {
+      const ingredient = element[`strIngredient${i}`];
+      const Measurement = element[`strMeasure${i}`];
+      if (ingredient === null || ingredient === '') {
+        break;
+      }
+      ingredients.push({ ingredient, Measurement });
+    }
+    return {
+      id: element.idMeal,
+      image: element.strMealThumb,
+      meal: element.strMeal,
+      price: Math.floor(Math.random() * 50),
+      ingredients: ingredients,
+      category: element.strCategory,
+      area: element.strArea,
+      youtube: element.strYoutube.slice(32, element.strYoutube.length),
+      instructions: element.strInstructions,
+      tags: element.strTags,
+    };
+  });
+  return newData[0];
+};
