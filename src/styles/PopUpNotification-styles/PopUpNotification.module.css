@@ -1,20 +1,23 @@
 .pop_up {
   background-color: var(--primary-orange);
-  width: min(25em, 100%);
+  width: min(25em, 90%);
   color: rgb(var(--white));
   margin: auto;
   position: absolute;
   top: 20%;
   right: 5%;
   z-index: 3;
-  padding: 12px 24px;
+  padding: 12px;
   border-radius: 10px;
   animation: slide-in 300ms ease-in forwards;
 }
 .pop_up p {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
+}
+.pop_up > p > i {
+  font-size: 24px;
 }
 
 @keyframes slide-in {

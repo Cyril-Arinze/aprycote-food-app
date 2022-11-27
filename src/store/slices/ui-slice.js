@@ -5,6 +5,7 @@ const initialUIState = {
   cartIsShown: false,
   popUp: false,
   popUpInfo: null,
+  popUpIcon: null,
 };
 const UISlice = createSlice({
   name: 'UI',
@@ -19,13 +20,13 @@ const UISlice = createSlice({
       state.cartIsShown = !state.cartIsShown;
     },
     togglePopUp(state, action) {
-      // toggle the visibility of the cart
+      // toggle the visibility of the popUp notification
       state.popUp = !state.popUp;
       if (action.payload) {
         state.popUp = true;
-        state.popUpInfo = action.payload;
+        state.popUpInfo = action.payload.info;
+        state.popUpIcon = action.payload.icon;
       }
-      state.popUpInfo = action.payload;
     },
   },
 });
@@ -36,6 +37,7 @@ const sideBarSelector = (state) => state.UI.sideBarIsShown;
 const cartSelector = (state) => state.UI.cartIsShown;
 const popUpSelector = (state) => state.UI.popUp;
 const popUpInfoSelector = (state) => state.UI.popUpInfo;
+const popUpIconSelector = (state) => state.UI.popUpIcon;
 
 export {
   UIAction,
@@ -43,6 +45,7 @@ export {
   cartSelector,
   popUpSelector,
   popUpInfoSelector,
+  popUpIconSelector,
 };
 
 export default UIReducer;

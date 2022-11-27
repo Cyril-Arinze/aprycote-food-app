@@ -12,12 +12,22 @@ const FavouriteButton = (props) => {
   const addToFavouriteHandler = () => {
     // this function takes the item received via props and dispatches it as an action payload for the store
     dispatch(favouriteActions.addToFavourite(props.item));
-    dispatch(UIAction.togglePopUp(`${props.item.meal} Added to favourite`));
+    dispatch(
+      UIAction.togglePopUp({
+        info: `${props.item.meal} Added to favourite`,
+        icon: `bi bi-check2-circle`,
+      })
+    );
   };
   const removeFromFavouriteHandler = () => {
     //this function takes the item ID received via props and dispatches it as an action payload for the store
     dispatch(favouriteActions.removeFromFavourite(props.item.id));
-    dispatch(UIAction.togglePopUp(`${props.item.meal} Removed from favourite`));
+    dispatch(
+      UIAction.togglePopUp({
+        info: `${props.item.meal} Removed from favourite`,
+        icon: `bi bi-x-circle`,
+      })
+    );
   };
 
   const addToFavouriteBtn = (
