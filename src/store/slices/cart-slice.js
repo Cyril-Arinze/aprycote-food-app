@@ -1,9 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+let locallyStoredCartItem = JSON.parse(
+  localStorage.getItem('storedCartItem') || '[]'
+);
+let locallyStoredTotalAmount = localStorage.getItem('storedTotalAmount') || '0';
+let locallyTotalQuantityInCart =
+  localStorage.getItem('storedTotalQuantityInCart') || '0';
+
 const cartInitialState = {
-  cartItems: [],
-  totalAmount: 0,
-  totalQuantityInCart: 0,
+  cartItems: locallyStoredCartItem,
+  totalAmount: +locallyStoredTotalAmount,
+  totalQuantityInCart: +locallyTotalQuantityInCart,
 };
 
 const cartSlice = createSlice({
@@ -32,6 +39,15 @@ const cartSlice = createSlice({
         (prev, item) => prev + item.quantity,
         0
       );
+      localStorage.setItem(
+        'storedCartItem',
+        JSON.stringify([...state.cartItems])
+      );
+      localStorage.setItem('storedTotalAmount', state.totalAmount);
+      localStorage.setItem(
+        'storedTotalQuantityInCart',
+        state.totalQuantityInCart
+      );
     },
     removeFromCart(state, action) {
       //Info: expected action payLoad is an ID
@@ -50,6 +66,15 @@ const cartSlice = createSlice({
         (prev, item) => prev + item.quantity,
         0
       );
+      localStorage.setItem(
+        'storedCartItem',
+        JSON.stringify([...state.cartItems])
+      );
+      localStorage.setItem('storedTotalAmount', state.totalAmount);
+      localStorage.setItem(
+        'storedTotalQuantityInCart',
+        state.totalQuantityInCart
+      );
     },
     DeleteCartItem(state, action) {
       const itemID = action.payload;
@@ -60,6 +85,15 @@ const cartSlice = createSlice({
       state.totalQuantityInCart = state.cartItems.reduce(
         (prev, item) => prev + item.quantity,
         0
+      );
+      localStorage.setItem(
+        'storedCartItem',
+        JSON.stringify([...state.cartItems])
+      );
+      localStorage.setItem('storedTotalAmount', state.totalAmount);
+      localStorage.setItem(
+        'storedTotalQuantityInCart',
+        state.totalQuantityInCart
       );
     },
   },
