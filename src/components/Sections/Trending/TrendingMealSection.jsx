@@ -83,7 +83,7 @@ const TrendingMealSection = () => {
         <img src={burgerImg} alt="burger" />
       </div>
       <main>
-        <SectionHeader category="Trending Orders" />
+        <SectionHeader category="Trending Orders" disableClass="disable" />
         <TrendingMealList trends={trendData} />
         <TrendingMealList trends={trendData} />
       </main>

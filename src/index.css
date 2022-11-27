@@ -71,6 +71,10 @@ body {
     gap: 0;
   }
 }
+.disable {
+  pointer-events: none !important;
+  opacity: 0.7;
+}
 .full-page > ul > li {
   margin: auto;
 }

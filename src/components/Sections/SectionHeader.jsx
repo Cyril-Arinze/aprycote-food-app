@@ -11,7 +11,7 @@ const SectionHeader = (props) => {
         to={`categories?category_name=${
           props.categoryName ? props.categoryName : 'Beef'
         }`}
-        className={classes.category__actions}
+        className={`${classes.category__actions} ${props.disableClass}`}
       >
         <p>View all</p>
         <MoreButton />
