@@ -3,6 +3,7 @@
   justify-content: flex-end;
   gap: 24px;
   position: relative;
+  width: 100%;
   aspect-ratio: 3.5;
 }
 .cart-item__details > span {

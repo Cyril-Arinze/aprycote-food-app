@@ -2,6 +2,7 @@
   border-collapse: collapse;
   width: min(100%, 50rem);
   margin: auto;
+  font-size: var(--fs-s);
 }
 .ingredient_table td {
   border: 1px solid var(--para-grey);
@@ -13,4 +14,5 @@
 .ingredient_table thead tr {
   background-color: var(--primary-orange);
   color: rgb(var(--white));
+  font-weight: 600;
 }

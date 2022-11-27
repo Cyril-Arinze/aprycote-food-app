@@ -5,7 +5,7 @@ import logoBg from '../../assets/logo-Bg.png';
 const Logo = (props) => {
   const logoSrc = props.src || logoBg; // => use the large logo if no src is provided
   return (
-    <Link to="/home" className="logo">
+    <Link to="/home?category=Beef" className="logo">
       <img src={logoSrc} alt={'Logo'} />
     </Link>
   );

@@ -7,11 +7,14 @@ import classes from '../../styles/UI-styles/Button-styles/BackButton.module.css'
 
 const BackButton = () => {
   const navigate = useNavigate();
-  const backHandler = () => {
-    navigate('/home?category=Beef', { replace: true });
-  };
+
   return (
-    <Button className={classes.back__button} onClick={backHandler}>
+    <Button
+      className={classes.back__button}
+      onClick={() => {
+        navigate('/home?category=Beef', { replace: true });
+      }}
+    >
       <MdOutlineKeyboardBackspace />
     </Button>
   );

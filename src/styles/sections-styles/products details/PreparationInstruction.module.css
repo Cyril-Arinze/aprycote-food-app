@@ -10,4 +10,5 @@
 }
 .instruction {
   text-align: justify;
+  font-size: var(--fs-s);
 }

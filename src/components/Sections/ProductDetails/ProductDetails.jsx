@@ -4,7 +4,6 @@ import { favouriteItemSelector } from '../../../store/slices/favourites-slice';
 
 import classes from '../../../styles/sections-styles/products details/ProductDetails.module.css';
 import AddButton from '../../../UI/Buttons/AddButton';
-import Button from '../../../UI/Buttons/Button';
 import FavouriteButton from '../../../UI/Buttons/FavouriteButton';
 const ProductDetails = (props) => {
   const favouriteItems = useSelector(favouriteItemSelector); // get the favourite items from the store
@@ -19,6 +18,7 @@ const ProductDetails = (props) => {
     tag: props.id,
     isFavourite,
   };
+
   let mealIngredient = '';
   props.ingredients.map((ingredient) => {
     return (mealIngredient += ingredient.ingredient + ', ');
@@ -45,7 +45,7 @@ const ProductDetails = (props) => {
           </div>
           <div>
             <p>
-              <span>Tags</span>: {props.tags ? props.tags : 'null'}
+              <span>Tags</span>:{props.tags ? props.tags : 'null'}
             </p>
           </div>
         </div>

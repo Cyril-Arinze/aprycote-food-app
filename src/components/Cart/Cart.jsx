@@ -55,7 +55,7 @@ function Cart(props) {
         <i className="bi bi-x-circle" />
       </button>
       <button className={classes['button']} onClick={orderHandler}>
-        Order
+        Checkout
       </button>
     </div>
   );

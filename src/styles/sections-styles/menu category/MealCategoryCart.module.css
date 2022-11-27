@@ -21,9 +21,10 @@
 }
 
 .cart__items {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  display: grid;
+  grid-gap: 24px;
+  grid-template-rows: max-content;
+  grid-auto-rows: max-content;
   overflow-y: scroll;
   scrollbar-width: none;
   max-height: 100%;

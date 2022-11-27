@@ -4,6 +4,7 @@ import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import classes from '../../styles/UI-styles/Button-styles/FavoriteButton.module.css';
 import { useDispatch } from 'react-redux';
 import { favouriteActions } from '../../store/slices/favourites-slice';
+import { UIAction } from '../../store/slices/ui-slice';
 
 const FavouriteButton = (props) => {
   const dispatch = useDispatch();
@@ -11,10 +12,12 @@ const FavouriteButton = (props) => {
   const addToFavouriteHandler = () => {
     // this function takes the item received via props and dispatches it as an action payload for the store
     dispatch(favouriteActions.addToFavourite(props.item));
+    dispatch(UIAction.togglePopUp(`${props.item.meal} Added to favourite`));
   };
   const removeFromFavouriteHandler = () => {
     //this function takes the item ID received via props and dispatches it as an action payload for the store
     dispatch(favouriteActions.removeFromFavourite(props.item.id));
+    dispatch(UIAction.togglePopUp(`${props.item.meal} Removed from favourite`));
   };
 
   const addToFavouriteBtn = (

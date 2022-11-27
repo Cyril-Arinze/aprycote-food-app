@@ -39,6 +39,7 @@
 }
 .product_tags > div > p {
   word-break: break-word;
+  hyphens: auto;
 }
 .product_tags > div > p > span,
 .product_price span,

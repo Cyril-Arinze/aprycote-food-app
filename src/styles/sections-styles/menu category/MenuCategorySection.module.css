@@ -13,21 +13,22 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+@media (43em <= width <= 62em) {
+  .meals-category {
+    grid-gap: 20px;
+    height: 735px;
+  }
+}
 @media (max-width: 43em) {
   .meals-category {
     grid-template-columns: 1fr;
+    grid-gap: 20px;
+    height: fit-content;
   }
   .meals-category aside {
     display: none;
   }
   .meals-category__header {
     padding: 24px 12px;
-  }
-}
-@media (max-width: 62em) {
-  .meals-category {
-    grid-gap: 20px;
-    height: 735px;
   }
 }
