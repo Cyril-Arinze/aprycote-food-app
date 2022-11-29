@@ -16,6 +16,7 @@ const FavouriteButton = (props) => {
       UIAction.togglePopUp({
         info: `${props.item.meal} Added to favourite`,
         icon: `bi bi-check2-circle`,
+        color: 'var(--primary-orange)',
       })
     );
   };
@@ -26,6 +27,7 @@ const FavouriteButton = (props) => {
       UIAction.togglePopUp({
         info: `${props.item.meal} Removed from favourite`,
         icon: `bi bi-x-circle`,
+        color: 'var(--warning)',
       })
     );
   };

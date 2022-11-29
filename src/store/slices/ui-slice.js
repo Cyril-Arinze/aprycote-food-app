@@ -3,9 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialUIState = {
   sideBarIsShown: true,
   cartIsShown: false,
-  popUp: false,
-  popUpInfo: null,
-  popUpIcon: null,
+  popUpDetails: {
+    popUp: false,
+    popUpInfo: null,
+    popUpIcon: null,
+    popUpColor: null,
+  },
 };
 const UISlice = createSlice({
   name: 'UI',
@@ -21,11 +24,12 @@ const UISlice = createSlice({
     },
     togglePopUp(state, action) {
       // toggle the visibility of the popUp notification
-      state.popUp = !state.popUp;
+      state.popUpDetails.popUp = !state.popUpDetails.popUp;
       if (action.payload) {
-        state.popUp = true;
-        state.popUpInfo = action.payload.info;
-        state.popUpIcon = action.payload.icon;
+        state.popUpDetails.popUp = true;
+        state.popUpDetails.popUpInfo = action.payload.info;
+        state.popUpDetails.popUpIcon = action.payload.icon;
+        state.popUpDetails.popUpColor = action.payload.color;
       }
     },
   },
@@ -35,17 +39,15 @@ const UIAction = UISlice.actions;
 const UIReducer = UISlice.reducer;
 const sideBarSelector = (state) => state.UI.sideBarIsShown;
 const cartSelector = (state) => state.UI.cartIsShown;
-const popUpSelector = (state) => state.UI.popUp;
-const popUpInfoSelector = (state) => state.UI.popUpInfo;
-const popUpIconSelector = (state) => state.UI.popUpIcon;
+const popUpDetailsSelector = (state) => state.UI.popUpDetails;
 
 export {
   UIAction,
   sideBarSelector,
   cartSelector,
-  popUpSelector,
-  popUpInfoSelector,
-  popUpIconSelector,
+  popUpDetailsSelector,
+  // popUpInfoSelector,
+  // popUpIconSelector,
 };
 
 export default UIReducer;

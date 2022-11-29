@@ -1,16 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  popUpIconSelector,
-  popUpInfoSelector,
-  UIAction,
-} from '../../store/slices/ui-slice';
+import { popUpDetailsSelector, UIAction } from '../../store/slices/ui-slice';
 
 import classes from '../../styles/PopUpNotification-styles/PopUpNotification.module.css';
 
 const PopUpNotification = (props) => {
-  const popUpInfo = useSelector(popUpInfoSelector);
-  const popUpIcon = useSelector(popUpIconSelector);
+  const popUpDetails = useSelector(popUpDetailsSelector);
+  const { popUpIcon, popUpInfo, popUpColor } = popUpDetails;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,7 +20,7 @@ const PopUpNotification = (props) => {
   }, [dispatch]);
 
   return (
-    <div className={classes.pop_up}>
+    <div className={classes.pop_up} style={{ backgroundColor: popUpColor }}>
       <p>
         <i className={popUpIcon} />
         {popUpInfo}
