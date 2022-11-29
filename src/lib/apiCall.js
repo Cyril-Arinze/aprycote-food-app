@@ -4,7 +4,11 @@ export const fetchCategories = async () => {
   );
   const data = await response.json();
   const categoriesData = data.categories;
-  const newData = categoriesData.map((element) => {
+  let newData = [];
+  if (!categoriesData) {
+    return newData;
+  }
+  newData = categoriesData.map((element) => {
     return {
       id: element.idCategory,
       image: element.strCategoryThumb,
@@ -19,8 +23,12 @@ export const SearchMealByName = async (mealName) => {
     `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
   );
   const data = await response.json();
-  const categoriesData = data.meals;
-  const newData = categoriesData.map((element) => {
+  const MealsData = data.meals;
+  let newData = [];
+  if (MealsData === null) {
+    return newData;
+  }
+  newData = MealsData.map((element) => {
     return {
       id: element.idMeal,
       image: `${element.strMealThumb}`,

@@ -24,7 +24,11 @@ const Search = () => {
   if (status === 'completed' && error) {
     content = <p className="centered">{error}</p>;
   }
-  if (status === 'completed' && (data === null || data.length === 0)) {
+  if (
+    status === 'completed' &&
+    (data === null || data.length === 0) &&
+    !error
+  ) {
     content = <p className="centered">No meal found for "{searchID}"</p>;
   }
   if (status === 'completed' && data) {

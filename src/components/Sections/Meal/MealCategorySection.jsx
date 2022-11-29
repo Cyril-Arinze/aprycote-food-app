@@ -37,16 +37,23 @@ const MealCategorySection = () => {
     <section id="menu" className={classes['meals-category']}>
       <main>
         <SectionHeader category="Menu Category" categoryName={categoryName} />
-        <MealCategoryList
-          category={categoriesData}
-          status={categoriesStatus}
-          error={categoriesError}
-        />
-        <AvailableMealList
-          meals={MealsData}
-          isLoading={MealStatus}
-          error={MealError}
-        />
+        {MealError && categoriesError && (
+          <p className="centered">{MealError}</p>
+        )}
+        {!(MealError && categoriesError) && (
+          <>
+            <MealCategoryList
+              category={categoriesData}
+              status={categoriesStatus}
+              error={categoriesError}
+            />
+            <AvailableMealList
+              meals={MealsData}
+              isLoading={MealStatus}
+              error={MealError}
+            />
+          </>
+        )}
       </main>
       <MealCategoryCart />
     </section>

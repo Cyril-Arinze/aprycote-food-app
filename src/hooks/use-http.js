@@ -39,7 +39,10 @@ const useHttp = (requestFn) => {
         const responseData = await requestFn(requestData);
         dispatch({ type: 'SUCCESS', responseData });
       } catch (error) {
-        dispatch({ type: 'ERROR', error: error.message });
+        dispatch({
+          type: 'ERROR',
+          error: 'Failed to connect to the internet, try again',
+        });
       }
     },
     [requestFn]

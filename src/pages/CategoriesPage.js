@@ -32,9 +32,9 @@ const CategoriesPage = () => {
     content = <MealItemSkeleton />;
   }
   if (mealStatus === 'completed' && mealError) {
-    <p className="centered">{mealError}</p>;
+    content = <p className="centered">{mealError}</p>;
   }
-  if (mealStatus === 'completed' && mealsData === null) {
+  if (mealStatus === 'completed' && mealsData === null && !mealError) {
     content = (
       <p className="centered">{categoryName} is not a valid category</p>
     );
