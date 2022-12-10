@@ -4,6 +4,7 @@ import MealCategorySection from '../components/Sections/Meal/MealCategorySection
 import TrendingMealSection from '../components/Sections/Trending/TrendingMealSection';
 
 const Home = () => {
+  document.querySelector('#main-layout').scrollTop = 0;
   return (
     <>
       <IntroHero />

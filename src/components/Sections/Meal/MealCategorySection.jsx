@@ -9,7 +9,7 @@ import useHttp from '../../../hooks/use-http';
 import { fetchCategories, fetchMealByCategories } from '../../../lib/apiCall';
 import { useSearchParams } from 'react-router-dom';
 
-const MealCategorySection = () => {
+function useFetchMealCat() {
   const [queryParam] = useSearchParams();
   const categoryName = queryParam.get('category');
 
@@ -21,9 +21,9 @@ const MealCategorySection = () => {
   } = useHttp(fetchCategories);
   const {
     sendRequest: fetchMealByCategoriesFn,
-    status: MealStatus,
-    data: MealsData,
-    error: MealError,
+    status: mealStatus,
+    data: mealsData,
+    error: mealError,
   } = useHttp(fetchMealByCategories);
 
   useEffect(() => {
@@ -32,15 +32,34 @@ const MealCategorySection = () => {
   useEffect(() => {
     fetchMealByCategoriesFn(categoryName);
   }, [fetchMealByCategoriesFn, categoryName]);
-
+  return {
+    categoriesData,
+    categoriesStatus,
+    categoriesError,
+    mealError,
+    mealStatus,
+    mealsData,
+    categoryName,
+  };
+}
+const MealCategorySection = () => {
+  const {
+    categoriesData,
+    categoriesStatus,
+    categoriesError,
+    mealError,
+    mealStatus,
+    mealsData,
+    categoryName,
+  } = useFetchMealCat();
   return (
     <section id="menu" className={classes['meals-category']}>
       <main>
         <SectionHeader category="Menu Category" categoryName={categoryName} />
-        {MealError && categoriesError && (
-          <p className="centered">{MealError}</p>
+        {mealError && categoriesError && (
+          <p className="centered">{mealError}</p>
         )}
-        {!(MealError && categoriesError) && (
+        {!(mealError && categoriesError) && (
           <>
             <MealCategoryList
               category={categoriesData}
@@ -48,9 +67,9 @@ const MealCategorySection = () => {
               error={categoriesError}
             />
             <AvailableMealList
-              meals={MealsData}
-              isLoading={MealStatus}
-              error={MealError}
+              meals={mealsData}
+              isLoading={mealStatus}
+              error={mealError}
             />
           </>
         )}

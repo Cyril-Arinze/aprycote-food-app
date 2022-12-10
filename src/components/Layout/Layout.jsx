@@ -21,7 +21,7 @@ const Layout = (props) => {
       <CartButton />
       <Header />
       {sideBarIsShown && <SideBar />}
-      <main>{props.children}</main>
+      <main id="main-layout">{props.children}</main>
     </section>
   );
 };

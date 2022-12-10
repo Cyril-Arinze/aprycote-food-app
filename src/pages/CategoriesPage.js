@@ -9,7 +9,7 @@ import classes from '../styles/pages-style/CategoriesPage.module.css';
 import { categories } from '../components/Sections/Trending/Categories';
 import MealItemSkeleton from '../UI/Loader/Skeleton Loader/MealItemSkeleton';
 
-const CategoriesPage = () => {
+const useCat = () => {
   const [searchParam, setSearchParam] = useSearchParams();
   const categoryName = searchParam.get('category_name');
   const {
@@ -20,12 +20,29 @@ const CategoriesPage = () => {
   } = useHttp(fetchMealByCategories);
 
   useEffect(() => {
+    document.querySelector('#main-layout').scrollTop = 0;
     fetchMealByCategoriesFn(categoryName);
   }, [fetchMealByCategoriesFn, categoryName]);
 
   const changeCategoriesHandler = (evt) => {
     setSearchParam({ category_name: evt.target.value });
   };
+  return {
+    mealError,
+    mealStatus,
+    mealsData,
+    changeCategoriesHandler,
+    categoryName,
+  };
+};
+const CategoriesPage = () => {
+  const {
+    mealError,
+    mealStatus,
+    mealsData,
+    changeCategoriesHandler,
+    categoryName,
+  } = useCat();
 
   let content;
   if (mealStatus === 'pending') {

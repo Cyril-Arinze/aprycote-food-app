@@ -11,7 +11,7 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import LazyLoader from '../../../UI/Loader/Lazy Loader/LazyLoader';
 import AvailableMealList from '../Meal/AvailableMealList';
 
-const ProductSection = () => {
+const useProduct = () => {
   const [queryParam] = useSearchParams();
   const relatedMeal = queryParam.get('meal').slice(0, 1);
   const params = useParams();
@@ -25,12 +25,26 @@ const ProductSection = () => {
   } = useHttp(SearchMealByName);
 
   useEffect(() => {
+    document.querySelector('#main-layout').scrollTop = 0;
     sendRequest(mealID);
   }, [sendRequest, mealID]);
 
   useEffect(() => {
     getRelatedMealFn(relatedMeal);
   }, [getRelatedMealFn, relatedMeal]);
+
+  return {
+    data,
+    status,
+    error,
+    mealError,
+    mealStatus,
+    mealsData,
+  };
+};
+const ProductSection = () => {
+  const { data, status, error, mealError, mealStatus, mealsData } =
+    useProduct();
 
   if (status === 'pending' || mealStatus === 'pending') {
     return <LazyLoader />;
