@@ -50,11 +50,27 @@
 .user__actions span {
   font-size: var(--fs-xs);
 }
+button.login {
+  background-color: transparent;
+  padding: 5px 24px;
+  border: 1px solid var(--primary-orange);
+  border-radius: 10px;
+  font-size: var(--fs-s);
+  letter-spacing: 0.05em;
+}
+button.login:hover {
+  background-color: var(--primary-orange);
+  color: rgb(var(--white));
+}
 
 @media (max-width: 62rem) {
   .user {
     flex-direction: column;
     align-items: flex-start;
+  }
+  button.login {
+    width: 100%;
+    margin-top: 10px;
   }
   .action_badge {
     top: 50%;

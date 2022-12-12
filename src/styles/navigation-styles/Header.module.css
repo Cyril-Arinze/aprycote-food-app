@@ -24,6 +24,9 @@
   border: 1px solid var(--border);
   border-radius: 24px;
 }
+.header form:focus-within {
+  border: 1px solid red;
+}
 .header input,
 .header input:hover,
 .header input:active {

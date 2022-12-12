@@ -35,6 +35,7 @@ const Header = () => {
       <form onSubmit={searchHandler}>
         <FiSearch />
         <input
+          aria-label="Search input"
           type="text"
           placeholder="Search meals by name"
           enterKeyHint="Search"

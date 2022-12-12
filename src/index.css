@@ -35,6 +35,7 @@
 .logo {
   text-decoration: none;
 }
+
 .logo > img {
   width: 100%;
   object-fit: cover;

@@ -1,13 +1,13 @@
 import React, { memo, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-import classes from '../../../styles/sections-styles/menu category/MenuCategorySection.module.css';
-import MealCategoryList from './MealCategoryList';
-import SectionHeader from '../SectionHeader';
-import MealCategoryCart from './MealCategoryCart';
-import AvailableMealList from './AvailableMealList';
 import useHttp from '../../../hooks/use-http';
 import { fetchCategories, fetchMealByCategories } from '../../../lib/apiCall';
-import { useSearchParams } from 'react-router-dom';
+import classes from '../../../styles/sections-styles/menu category/MenuCategorySection.module.css';
+import SectionHeader from '../SectionHeader';
+import AvailableMealList from './AvailableMealList';
+import MealCategoryCart from './MealCategoryCart';
+import MealCategoryList from './MealCategoryList';
 
 function useFetchMealCat() {
   const [queryParam] = useSearchParams();

@@ -11,9 +11,12 @@ import Logo from '../../UI/Logo/Logo';
 import UserProfile from '../User/UserProfile';
 import AuthButton from '../Authentication/AuthButton';
 import { NavLink } from 'react-router-dom';
+import { isAuthSelector } from '../../store/slices/auth-slice';
+import { useSelector } from 'react-redux';
 
 const SideBar = () => {
   const [sideBarIsExpanded, setSideBarIsExpanded] = useState(true); // use to manage if the side bar is expanded or not
+  const isAuth = useSelector(isAuthSelector);
 
   const expandSideBarHandler = () => {
     // toggle side bar expansion
@@ -84,9 +87,11 @@ const SideBar = () => {
         <div className={classes.user}>
           <UserProfile />
         </div>
-        <div className={classes.auth__btn}>
-          <AuthButton sideBarIsExpanded={sideBarIsExpanded} />
-        </div>
+        {isAuth && (
+          <div className={classes.auth__btn}>
+            <AuthButton sideBarIsExpanded={sideBarIsExpanded} />
+          </div>
+        )}
       </nav>
     </aside>
   );

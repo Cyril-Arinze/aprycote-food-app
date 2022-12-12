@@ -9,7 +9,7 @@
   z-index: 3;
   padding: 12px;
   border-radius: 10px;
-  animation: slide-in 300ms ease-in forwards;
+  animation: slide-in 100ms;
 }
 .pop_up p {
   display: flex;
@@ -29,11 +29,5 @@
   to {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-@media (max-width: 43em) {
-  .pop_up {
-    right: 0;
-    transform: translate(-50%, 0);
   }
 }

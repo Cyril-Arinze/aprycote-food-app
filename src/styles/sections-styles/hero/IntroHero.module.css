@@ -31,6 +31,7 @@
   letter-spacing: 0.02em;
   color: var(--black);
   font-feature-settings: 'pnum' on, 'lnum' on;
+  text-transform: capitalize !important;
 }
 .hero_details > span {
   font-style: normal;

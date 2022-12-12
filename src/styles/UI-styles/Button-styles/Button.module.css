@@ -3,8 +3,10 @@
   border-radius: 100px;
   border: none;
   outline: none;
+  transition: 100ms;
 }
 .button:hover {
   cursor: pointer;
   background-color: var(--primary-orange-light);
+  transform: scale(1.05);
 }

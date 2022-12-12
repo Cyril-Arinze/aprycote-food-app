@@ -56,11 +56,11 @@
 .cart_btn {
   font-size: var(--fs-m);
   font-family: Playfair Display;
-  border-radius: 10px;
+  border-radius: 10px !important;
   color: rgb(var(--white));
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 100% !important;
   height: 40px;
   justify-content: center;
 }

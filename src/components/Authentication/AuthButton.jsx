@@ -1,17 +1,15 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import React from 'react';
 import classes from '../../styles/authentication-styles/AuthButton.module.css';
-import { FiLogIn, FiLogOut } from 'react-icons/fi';
-import { authActions } from '../../store/slices/auth-slice';
-import { isAuthSelector } from '../../store/slices/auth-slice';
+import { FiLogOut } from 'react-icons/fi';
+import { useAuth } from '../../hooks/use-auth';
 
 const AuthButton = (props) => {
-  const isLoggedIn = useSelector(isAuthSelector); // selects the authentication state from the redux store
-  const dispatch = useDispatch(); // Dispatches action to the redux store
+  const { logOut } = useAuth();
 
   const authenticationHandler = () => {
     // dispatch actions the toggle the auth state in the redux store
-    dispatch(authActions.toggleIsAuth());
+    logOut();
   };
   // conditional class for the auth button based on if the user is authenticated or not
   const authBtnClass = props.sideBarIsExpanded
@@ -19,8 +17,8 @@ const AuthButton = (props) => {
     : `${classes.expanded} ${classes.auth}`;
   return (
     <button onClick={authenticationHandler} className={authBtnClass}>
-      {isLoggedIn ? <FiLogOut /> : <FiLogIn />}
-      <span>{isLoggedIn ? 'Logout' : 'Login'}</span>
+      {<FiLogOut />}
+      <span>{'Logout'}</span>
     </button>
   );
 };
