@@ -12,15 +12,22 @@ import UserProfile from '../User/UserProfile';
 import AuthButton from '../Authentication/AuthButton';
 import { NavLink } from 'react-router-dom';
 import { isAuthSelector } from '../../store/slices/auth-slice';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { UIAction } from '../../store/slices/ui-slice';
 
 const SideBar = () => {
   const [sideBarIsExpanded, setSideBarIsExpanded] = useState(true); // use to manage if the side bar is expanded or not
   const isAuth = useSelector(isAuthSelector);
+  const dispatch = useDispatch();
 
   const expandSideBarHandler = () => {
     // toggle side bar expansion
     setSideBarIsExpanded((prevState) => !prevState);
+  };
+  const closeSideBar = () => {
+    if (window.innerWidth < 1008) {
+      dispatch(UIAction.toggleSideBar());
+    }
   };
 
   // conditional class for the text in the navigation link based on if the side bar is expanded or not
@@ -41,7 +48,7 @@ const SideBar = () => {
   };
 
   return (
-    <aside className={classes['side-bar']}>
+    <aside onClick={closeSideBar} className={classes['side-bar']}>
       <div
         onClick={expandSideBarHandler}
         className={classes['side-bar__toggle']}

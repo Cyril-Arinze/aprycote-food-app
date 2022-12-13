@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import React from 'react';
 import classes from '../../styles/authentication-styles/AuthButton.module.css';
 import { FiLogOut } from 'react-icons/fi';
